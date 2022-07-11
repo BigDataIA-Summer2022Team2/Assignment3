@@ -1,0 +1,877 @@
+[Running] python -u "d:\lemon\damg7245\Big-Data-Systems-Intelligence-Analytics-Labs-Summer-2022\assignment_1\src\pyTestCases\test_data.py"
+log base directory 日志文件目录:	d:\lemon\damg7245\Big-Data-Systems-Intelligence-Analytics-Labs-Summer-2022\assignment_1
+============================= test session starts =============================
+platform win32 -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: d:\lemon\damg7245\Big-Data-Systems-Intelligence-Analytics-Labs-Summer-2022
+plugins: anyio-3.6.1, timeout-2.1.0
+collected 30 items
+
+assignment_1\src\pyTestCases\test_data.py 
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE3121D2B0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[1-2]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[1-2]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE321F1550>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322314F0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-F16]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-F16]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE31E5A820>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-helloworld]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-helloworld]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE31E5A2E0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[1-2]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[1-2]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322EA490>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322EA400>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[3-F16]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[3-F16]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322E1D00>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-helloworld]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-helloworld]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32303E20>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[11-12]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[11-12]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32303D90>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[-]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[-]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE312482E0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[-F16]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[-F16]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32325610>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-helloworld]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-helloworld]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322DEAC0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-F117]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-F117]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32231490>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[0-0]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[0-0]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32231B80>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[1000-1000]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[1000-1000]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE3234E850>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[9999-9999]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[9999-9999]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE3234ED60>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-1--1]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-1--1]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322A5880>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[1-hello]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[1-hello]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE32285A00>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE321C17C0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[0-0-0-0]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[0-0-0-0]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE31E76070>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[1-1-500-500]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[1-1-500-500]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322F7FA0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[-1--1-1-1]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[-1--1-1-1]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322D8220>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[1-hello-999-999]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[1-hello-999-999]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322F9160>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[---]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[---]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322F9160>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[5]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[5]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322F9430>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[8]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[8]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE322F98B0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[20]' when='call' outcome='passed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[20]
+description:	None
+result:	passed
+.
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE31F76E20>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[-1]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[-1]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE3229C3D0>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[123]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[123]
+description:	None
+result:	failed
+F
+====================================================
+Test Result:	<pluggy._result._Result object at 0x000001DE321C3C10>
+Test Report:	<TestReport 'assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[hello]' when='call' outcome='failed'>
+Process:	call
+id:	assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[hello]
+description:	None
+result:	failed
+F [100%]
+
+================================== FAILURES ===================================
+_________________________ test_getAwsS3BucketBody[-] __________________________
+
+filename = '', className = ''
+
+    @pytest.mark.parametrize('filename,className',[(1,2),("",""),("","F16"),("","helloworld")])
+    def test_getAwsS3BucketBody(filename,className):
+    
+>       assert getS3BucketBody.getS3BucketBodyInfo(filename,className) != {}
+
+assignment_1\src\pyTestCases\test_data.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+filename = '', width = '', height = 99999, className = '', xmin = 0, ymin = 0
+xmax = 0, ymax = 0
+
+    def getS3BucketBodyInfo(filename="",width=0,height=0,className="",xmin=0,ymin=0,xmax=0,ymax=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                #width and height check
+                if(width==0):
+                    width=99999
+                if(height==0):
+                    height=99999
+>               width_check= 0 < int(csv_header_value_list[i][1]) < width
+E               TypeError: '<' not supported between instances of 'int' and 'str'
+
+assignment_1\src\api_functions\getS3BucketBody.py:46: TypeError
+________________________ test_getAwsS3BucketBody[-F16] ________________________
+
+filename = '', className = 'F16'
+
+    @pytest.mark.parametrize('filename,className',[(1,2),("",""),("","F16"),("","helloworld")])
+    def test_getAwsS3BucketBody(filename,className):
+    
+>       assert getS3BucketBody.getS3BucketBodyInfo(filename,className) != {}
+
+assignment_1\src\pyTestCases\test_data.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+filename = '', width = 'F16', height = 99999, className = '', xmin = 0, ymin = 0
+xmax = 0, ymax = 0
+
+    def getS3BucketBodyInfo(filename="",width=0,height=0,className="",xmin=0,ymin=0,xmax=0,ymax=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                #width and height check
+                if(width==0):
+                    width=99999
+                if(height==0):
+                    height=99999
+>               width_check= 0 < int(csv_header_value_list[i][1]) < width
+E               TypeError: '<' not supported between instances of 'int' and 'str'
+
+assignment_1\src\api_functions\getS3BucketBody.py:46: TypeError
+____________________ test_getAwsS3BucketBody[-helloworld] _____________________
+
+filename = '', className = 'helloworld'
+
+    @pytest.mark.parametrize('filename,className',[(1,2),("",""),("","F16"),("","helloworld")])
+    def test_getAwsS3BucketBody(filename,className):
+    
+>       assert getS3BucketBody.getS3BucketBodyInfo(filename,className) != {}
+
+assignment_1\src\pyTestCases\test_data.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+filename = '', width = 'helloworld', height = 99999, className = '', xmin = 0
+ymin = 0, xmax = 0, ymax = 0
+
+    def getS3BucketBodyInfo(filename="",width=0,height=0,className="",xmin=0,ymin=0,xmax=0,ymax=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                #width and height check
+                if(width==0):
+                    width=99999
+                if(height==0):
+                    height=99999
+>               width_check= 0 < int(csv_header_value_list[i][1]) < width
+E               TypeError: '<' not supported between instances of 'int' and 'str'
+
+assignment_1\src\api_functions\getS3BucketBody.py:46: TypeError
+____________________ test_AircraftNumandClassNameInput[-] _____________________
+
+num = '', className = ''
+
+    @pytest.mark.parametrize('num,className',[(1,2),("",""),(3,"F16"),("","helloworld")])
+    def test_AircraftNumandClassNameInput(num,className):
+    
+>       assert numAndClassNameFiltered.getNumAndClassFilteredResult(num,className) != {}
+E       AssertionError: assert {} != {}
+E        +  where {} = <function getNumAndClassFilteredResult at 0x000001DE30C28310>('', '')
+E        +    where <function getNumAndClassFilteredResult at 0x000001DE30C28310> = numAndClassNameFiltered.getNumAndClassFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:34: AssertionError
+_______________ test_AircraftNumandClassNameInput[-helloworld] ________________
+
+num = '', className = 'helloworld'
+
+    @pytest.mark.parametrize('num,className',[(1,2),("",""),(3,"F16"),("","helloworld")])
+    def test_AircraftNumandClassNameInput(num,className):
+    
+>       assert numAndClassNameFiltered.getNumAndClassFilteredResult(num,className) != {}
+E       AssertionError: assert {} != {}
+E        +  where {} = <function getNumAndClassFilteredResult at 0x000001DE30C28310>('', 'helloworld')
+E        +    where <function getNumAndClassFilteredResult at 0x000001DE30C28310> = numAndClassNameFiltered.getNumAndClassFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:34: AssertionError
+___________________ test_fileNameAndClassNameRequest[11-12] ___________________
+
+filename = 11, className = 12
+
+    @pytest.mark.parametrize('filename,className',[(11,12),("",""),("","F16"),("4a042db1cef213a1ed865422e6355f76","helloworld"),("4a042db1cef213a1ed865422e6355f76","F117")])
+    def test_fileNameAndClassNameRequest(filename,className):
+    
+>       assert fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult(filename,className) != {}
+E       assert {} != {}
+E        +  where {} = <function getFileNameClassNameFilteredResult at 0x000001DE30F36160>(11, 12)
+E        +    where <function getFileNameClassNameFilteredResult at 0x000001DE30F36160> = fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:41: AssertionError
+___________________ test_fileNameAndClassNameRequest[-F16] ____________________
+
+filename = '', className = 'F16'
+
+    @pytest.mark.parametrize('filename,className',[(11,12),("",""),("","F16"),("4a042db1cef213a1ed865422e6355f76","helloworld"),("4a042db1cef213a1ed865422e6355f76","F117")])
+    def test_fileNameAndClassNameRequest(filename,className):
+    
+>       assert fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult(filename,className) != {}
+E       AssertionError: assert {} != {}
+E        +  where {} = <function getFileNameClassNameFilteredResult at 0x000001DE30F36160>('', 'F16')
+E        +    where <function getFileNameClassNameFilteredResult at 0x000001DE30F36160> = fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:41: AssertionError
+_ test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-helloworld] _
+
+filename = '4a042db1cef213a1ed865422e6355f76', className = 'helloworld'
+
+    @pytest.mark.parametrize('filename,className',[(11,12),("",""),("","F16"),("4a042db1cef213a1ed865422e6355f76","helloworld"),("4a042db1cef213a1ed865422e6355f76","F117")])
+    def test_fileNameAndClassNameRequest(filename,className):
+    
+>       assert fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult(filename,className) != {}
+E       AssertionError: assert {} != {}
+E        +  where {} = <function getFileNameClassNameFilteredResult at 0x000001DE30F36160>('4a042db1cef213a1ed865422e6355f76', 'helloworld')
+E        +    where <function getFileNameClassNameFilteredResult at 0x000001DE30F36160> = fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:41: AssertionError
+___ test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-F117] ___
+
+filename = '4a042db1cef213a1ed865422e6355f76', className = 'F117'
+
+    @pytest.mark.parametrize('filename,className',[(11,12),("",""),("","F16"),("4a042db1cef213a1ed865422e6355f76","helloworld"),("4a042db1cef213a1ed865422e6355f76","F117")])
+    def test_fileNameAndClassNameRequest(filename,className):
+    
+>       assert fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult(filename,className) != {}
+E       AssertionError: assert {} != {}
+E        +  where {} = <function getFileNameClassNameFilteredResult at 0x000001DE30F36160>('4a042db1cef213a1ed865422e6355f76', 'F117')
+E        +    where <function getFileNameClassNameFilteredResult at 0x000001DE30F36160> = fileNameAndClassNameFiltered.getFileNameClassNameFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:41: AssertionError
+_______________________ test_imgSizeRangeRequest[-1--1] _______________________
+
+width = -1, height = -1
+
+    @pytest.mark.parametrize('width,height',[(0,0),(1000,1000),(9999,9999),(-1,-1),("1","hello"),('','')])
+    def test_imgSizeRangeRequest(width,height):
+    
+>       assert imgSizeRangeFiltered.getimgSizeRangeFilteredResult(width,height) != {}
+E       assert {} != {}
+E        +  where {} = <function getimgSizeRangeFilteredResult at 0x000001DE30F361F0>(-1, -1)
+E        +    where <function getimgSizeRangeFilteredResult at 0x000001DE30F361F0> = imgSizeRangeFiltered.getimgSizeRangeFilteredResult
+
+assignment_1\src\pyTestCases\test_data.py:48: AssertionError
+______________________ test_imgSizeRangeRequest[1-hello] ______________________
+
+width = '1', height = 'hello'
+
+    @pytest.mark.parametrize('width,height',[(0,0),(1000,1000),(9999,9999),(-1,-1),("1","hello"),('','')])
+    def test_imgSizeRangeRequest(width,height):
+    
+>       assert imgSizeRangeFiltered.getimgSizeRangeFilteredResult(width,height) != {}
+
+assignment_1\src\pyTestCases\test_data.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+width = '1', height = 'hello'
+
+    def getimgSizeRangeFilteredResult(width=0,height=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+    
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                #width and height check
+                if(width==0):
+                    width=99999
+                if(height==0):
+                    height=99999
+>               width_check= 0 < int(csv_header_value_list[i][1]) < width
+E               TypeError: '<' not supported between instances of 'int' and 'str'
+
+assignment_1\src\api_functions\imgSizeRangeFiltered.py:46: TypeError
+_________________________ test_imgSizeRangeRequest[-] _________________________
+
+width = '', height = ''
+
+    @pytest.mark.parametrize('width,height',[(0,0),(1000,1000),(9999,9999),(-1,-1),("1","hello"),('','')])
+    def test_imgSizeRangeRequest(width,height):
+    
+>       assert imgSizeRangeFiltered.getimgSizeRangeFilteredResult(width,height) != {}
+
+assignment_1\src\pyTestCases\test_data.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+width = '', height = ''
+
+    def getimgSizeRangeFilteredResult(width=0,height=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+    
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                #width and height check
+                if(width==0):
+                    width=99999
+                if(height==0):
+                    height=99999
+>               width_check= 0 < int(csv_header_value_list[i][1]) < width
+E               TypeError: '<' not supported between instances of 'int' and 'str'
+
+assignment_1\src\api_functions\imgSizeRangeFiltered.py:46: TypeError
+___________________ test_aircraftPositionFilter[-1--1-1-1] ____________________
+
+xmin = -1, ymin = -1, xmax = 1, ymax = 1
+
+    @pytest.mark.parametrize('xmin,ymin,xmax,ymax',[(0,0,0,0),(1,1,500,500),(-1,-1,1,1),("1","hello",999,999),('','','','')])
+    def test_aircraftPositionFilter(xmin,ymin,xmax,ymax):
+    
+>       assert aircraftPositionFilter.getAircraftPositionFilterResult(xmin,ymin,xmax,ymax) != {}
+E       assert {} != {}
+E        +  where {} = <function getAircraftPositionFilterResult at 0x000001DE30F36280>(-1, -1, 1, 1)
+E        +    where <function getAircraftPositionFilterResult at 0x000001DE30F36280> = aircraftPositionFilter.getAircraftPositionFilterResult
+
+assignment_1\src\pyTestCases\test_data.py:55: AssertionError
+________________ test_aircraftPositionFilter[1-hello-999-999] _________________
+
+xmin = '1', ymin = 'hello', xmax = 999, ymax = 999
+
+    @pytest.mark.parametrize('xmin,ymin,xmax,ymax',[(0,0,0,0),(1,1,500,500),(-1,-1,1,1),("1","hello",999,999),('','','','')])
+    def test_aircraftPositionFilter(xmin,ymin,xmax,ymax):
+    
+>       assert aircraftPositionFilter.getAircraftPositionFilterResult(xmin,ymin,xmax,ymax) != {}
+
+assignment_1\src\pyTestCases\test_data.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+xmin = '1', ymin = 'hello', xmax = 999, ymax = 999
+
+    def getAircraftPositionFilterResult(xmin=0,ymin=0,xmax=0,ymax=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+        # filename="4a042db1cef213a1ed865422e6355f76"
+        # className=""
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+    
+    
+    
+                #xmin ymin xmax ymax check
+                if(xmax == 0):
+                    xmax = int(csv_header_value_list[i][1]) #width
+                if(ymax == 0):
+                    ymax = int(csv_header_value_list[i][2]) #height
+    
+>               xmin_check = xmin <= int(csv_header_value_list[i][4]) < xmax
+E               TypeError: '<=' not supported between instances of 'str' and 'int'
+
+assignment_1\src\api_functions\aircraftPositionFilter.py:51: TypeError
+______________________ test_aircraftPositionFilter[---] _______________________
+
+xmin = '', ymin = '', xmax = '', ymax = ''
+
+    @pytest.mark.parametrize('xmin,ymin,xmax,ymax',[(0,0,0,0),(1,1,500,500),(-1,-1,1,1),("1","hello",999,999),('','','','')])
+    def test_aircraftPositionFilter(xmin,ymin,xmax,ymax):
+    
+>       assert aircraftPositionFilter.getAircraftPositionFilterResult(xmin,ymin,xmax,ymax) != {}
+
+assignment_1\src\pyTestCases\test_data.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+xmin = '', ymin = '', xmax = '', ymax = ''
+
+    def getAircraftPositionFilterResult(xmin=0,ymin=0,xmax=0,ymax=0):
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+        inner_index_num = csv_header_value_list[0].split(',')   # header 0-7 [0] file_name
+        index_no = 0
+        result={}
+    
+        # filename="4a042db1cef213a1ed865422e6355f76"
+        # className=""
+    
+        for i in range(len(csv_header_value_list)):
+            if(i > 0):
+                index_no += 1 #?   +1 record(key+value)
+    
+                header_list = csv_header_value_list[0].split(',') # split key(header) list
+    
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+    
+    
+    
+                #xmin ymin xmax ymax check
+                if(xmax == 0):
+                    xmax = int(csv_header_value_list[i][1]) #width
+                if(ymax == 0):
+                    ymax = int(csv_header_value_list[i][2]) #height
+    
+>               xmin_check = xmin <= int(csv_header_value_list[i][4]) < xmax
+E               TypeError: '<=' not supported between instances of 'str' and 'int'
+
+assignment_1\src\api_functions\aircraftPositionFilter.py:51: TypeError
+____________________ test_randNumAircraftsInfoRequest[-1] _____________________
+
+num = -1
+
+    @pytest.mark.parametrize('num',[5,8,20,-1,'123','hello'])
+    def test_randNumAircraftsInfoRequest(num):
+    
+>       assert getNumRandomImages.getNumRandomImageFileNames(num) != {}
+
+assignment_1\src\pyTestCases\test_data.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+num = -1
+
+    def getNumRandomImageFileNames(num):
+        if(num > 9):
+            return {"error": "You should give a number which is less than 10!"}
+    
+        key = 'csv/combined.csv'
+        abs_path = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
+        csv_path = abs_path+"\\credentials\\aws_s3_credentials.json"
+    
+        credentials = json.load(open(csv_path))
+    
+        s3_resource = boto3.client(
+            service_name=credentials['service_name'],
+            region_name=credentials['region_name'],
+            aws_access_key_id=credentials['aws_access_key_id'],
+            aws_secret_access_key=credentials['aws_secret_access_key'])
+    
+    
+        bucket = credentials['aws_s3_bucket_name']
+    
+        obj = s3_resource.get_object(Bucket = bucket , Key = key)
+        body_str = obj['Body'].read().decode()
+    
+        csv_header_value_list = body_str.split() # split body into 1 list (contain csv headers and values) header=str->  csv_header_value_list[0]        value=string
+    
+        fileName_list = [None] * num
+    
+        randNum = random.randint(0, 350-num)
+    
+    
+        index_no = 0
+        for i in range(len(csv_header_value_list)):
+            if(i > randNum):
+                csv_header_value_list[i] = csv_header_value_list[i].split(',') #  slipt value list ','
+    
+                if(csv_header_value_list[i][0] != csv_header_value_list[i-1][0]):
+                    if(index_no == num):
+                        break
+>                   fileName_list[index_no] = csv_header_value_list[i][0]
+E                   IndexError: list assignment index out of range
+
+assignment_1\src\api_functions\getNumRandomImages.py:46: IndexError
+____________________ test_randNumAircraftsInfoRequest[123] ____________________
+
+num = '123'
+
+    @pytest.mark.parametrize('num',[5,8,20,-1,'123','hello'])
+    def test_randNumAircraftsInfoRequest(num):
+    
+>       assert getNumRandomImages.getNumRandomImageFileNames(num) != {}
+
+assignment_1\src\pyTestCases\test_data.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+num = '123'
+
+    def getNumRandomImageFileNames(num):
+>       if(num > 9):
+E       TypeError: '>' not supported between instances of 'str' and 'int'
+
+assignment_1\src\api_functions\getNumRandomImages.py:10: TypeError
+___________________ test_randNumAircraftsInfoRequest[hello] ___________________
+
+num = 'hello'
+
+    @pytest.mark.parametrize('num',[5,8,20,-1,'123','hello'])
+    def test_randNumAircraftsInfoRequest(num):
+    
+>       assert getNumRandomImages.getNumRandomImageFileNames(num) != {}
+
+assignment_1\src\pyTestCases\test_data.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+num = 'hello'
+
+    def getNumRandomImageFileNames(num):
+>       if(num > 9):
+E       TypeError: '>' not supported between instances of 'str' and 'int'
+
+assignment_1\src\api_functions\getNumRandomImages.py:10: TypeError
+=========================== short test summary info ===========================
+FAILED assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-F16]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_getAwsS3BucketBody[-helloworld]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_AircraftNumandClassNameInput[-helloworld]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[11-12]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[-F16]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-helloworld]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_fileNameAndClassNameRequest[4a042db1cef213a1ed865422e6355f76-F117]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-1--1]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[1-hello]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_imgSizeRangeRequest[-]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[-1--1-1-1]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[1-hello-999-999]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_aircraftPositionFilter[---]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[-1]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[123]
+FAILED assignment_1/src/pyTestCases/test_data.py::test_randNumAircraftsInfoRequest[hello]
+======================== 18 failed, 12 passed in 8.52s ========================
