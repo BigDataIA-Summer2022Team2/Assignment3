@@ -10,7 +10,7 @@
 
 ## 1. Intro
 
-- Assignment 1 is a very easy way to understand what a real-life python project looks like
+- Assignment 3 is a very easy way to understand what a real-life python project looks like
 - create
 
 ## 2. Setup
