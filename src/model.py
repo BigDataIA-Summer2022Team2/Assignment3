@@ -13,7 +13,6 @@ train= train_data_gen.flow_from_directory(directory="./src/train", target_size=(
 train.class_indices
 
 
-
 xcept = Xception(input_shape = (256, 256, 3), include_top = False, weights = 'imagenet')
 
 for layer in xcept.layers:
