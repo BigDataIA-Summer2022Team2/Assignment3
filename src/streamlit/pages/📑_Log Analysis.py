@@ -128,7 +128,7 @@ if(st.session_state.authentication_status == True):
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
         plt.ylabel("Number of API functions calling")
-        plt.title(st.session_state.username + "'s API Functions Call Bar Chart")
+        plt.title(st.session_state.username + "'s Image Detection API Calls Bar Chart")
         st.pyplot(fig)
         
         ###########################################
@@ -141,7 +141,7 @@ if(st.session_state.authentication_status == True):
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
+        ax1.set_title(st.session_state.username + "'s Image Detection API Calls Pie Chart")
         st.pyplot(fig1)
         
         ####################################################
