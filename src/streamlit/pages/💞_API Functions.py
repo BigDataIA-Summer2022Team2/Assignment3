@@ -6,8 +6,7 @@ import json
 import io
 import time
 from PIL import Image
-#from baseDatas import userAgents
-
+from urllib3 import encode_multipart_formdata
 
 st.set_page_config(page_title="API Functions",page_icon=":heart:")
 
@@ -40,7 +39,7 @@ def getFastAPIResponse(url,data):
 
 ############################################# API Functions Calling #############################################
 def function1():
-    st.markdown("# Function 1 Get input number of random images file list🎈")
+    st.markdown("# Check 🎈")
     st.sidebar.markdown("# Function 1 🎈")
     #randNum = st.sidebar.number_input("Pick a number for random images [1,9]",1,9,step=1)
     isClick = st.sidebar.button("OK")
@@ -49,11 +48,35 @@ def function1():
     uploaded_files = st.file_uploader(label="Image File Upload",type=['png', 'jpg', 'jpeg', 'svg'], accept_multiple_files = True, key="image")
     
     
-    for uploaded_file in uploaded_files:
-        bytes_data = uploaded_file.read()
-        st.write("filename:", uploaded_file.name)
-        st.write(bytes_data)
+    for i in range(0,len(uploaded_files)):
+        filename = uploaded_files[i].name
+        filetype = uploaded_files[i].type
+        filesize = uploaded_files[i].size
+        filedata = uploaded_files[i].read()
         
+        st.write(filename)
+        st.write(filetype)
+        st.write(filesize)
+        st.write(type(filedata))
+        
+        
+        
+        
+        header = {"Content-Type" : "multipart/form-data"}
+        data = {'key':'value'}
+        url = 'http://127.0.0.1:8000/qualityinspection/'
+        data['file']= (filename,filedata)
+        #转换data数据的类型
+        encode_data = encode_multipart_formdata(data)
+        data = encode_data[0]
+        header['Content-Type'] = encode_data[1]
+        response = requests.post(url=url, headers=header, data=data)
+
+    
+    
+    # url = 'http://127.0.0.1:8000/qualityinspection/'
+    # files = {'attach': ('p5.png', open('../p5.png', 'rb'))}
+
         #url = 'http://127.0.0.1:8000/api/get/random/'
         #data = {'num' : randNum}
         #response = getFastAPIResponse(url,data)
