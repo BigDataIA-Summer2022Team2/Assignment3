@@ -144,66 +144,6 @@ if(st.session_state.authentication_status == True):
         ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
         st.pyplot(fig1)
         
-        
-        #####################################################
-        c.execute("SELECT requestUrl FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
-        function_name_1 = "getboundingbox"
-        count_func1 = 0
-        function_name_2 = "fileNameAndClass"
-        count_func2 = 0
-        function_name_3 = "imgSizeRange"
-        count_func3 = 0
-        function_name_4 = "aircraftPositionRange"
-        count_func4 = 0
-        function_name_5 = "aircraftNumandClass"
-        count_func5 = 0
-        function_name_6 = "random"
-        count_func6 = 0
-        function_name_7 = "display/image"
-        count_func7 = 0
-        
-        #Todo 改名字
-        result = c.fetchall()
-        for item in result:
-            if(function_name_1 in item[0]):
-               count_func1 += 1
-            elif(function_name_2 in item[0]):
-                count_func2 += 1
-            elif(function_name_3 in item[0]):
-                count_func3 += 1
-            elif(function_name_4 in item[0]):
-                count_func4 += 1
-            elif(function_name_5 in item[0]):
-                count_func5 += 1
-            elif(function_name_6 in item[0]):
-                count_func6 += 1
-            elif(function_name_7 in item[0]):
-                count_func7 += 1
-        
-        
-        df2 = pd.DataFrame({
-            'function': [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7],
-            st.session_state.username: [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        })
-
-        df2 = df2.rename(columns={'function':'index'}).set_index('index')
-
-        #st.line_chart(df2)
-        
-
-
-        label1s = [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7]
-        size1s = [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        explode1 = (0, 0, 0, 0, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-
-        fig6, ax2 = plt.subplots()
-        ax2.pie(size1s, explode=explode1, labels=label1s, autopct='%1.1f%%',
-                shadow=True, startangle=90)
-        ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax2.set_title("All API functions Pass/Fail Pie Chart")
-        st.pyplot(fig6)
-        st.bar_chart(df2)
-        
         ####################################################
         
         
@@ -227,7 +167,7 @@ if(st.session_state.authentication_status == True):
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
         plt.ylabel("Number of API functions calling")
-        plt.title(st.session_state.username + "'s API Functions Call Bar Chart")
+        plt.title(st.session_state.username + "'s Image Detection API Calls Bar Chart")
         st.pyplot(fig)
         
         ###########################################
@@ -240,7 +180,7 @@ if(st.session_state.authentication_status == True):
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
+        ax1.set_title(st.session_state.username + "'s Image Detection API Calls Pie Chart")
         st.pyplot(fig1)
         
         
@@ -261,8 +201,8 @@ if(st.session_state.authentication_status == True):
         plt.bar(admin_keys, admin_values)
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
-        plt.ylabel("Number of API functions calling")
-        plt.title("All API Functions Call Bar Chart Record")
+        plt.ylabel("Number of images Dectection")
+        plt.title("Image Dectection API Function Call Bar Chart")
         st.pyplot(fig4)
         
 
@@ -280,65 +220,45 @@ if(st.session_state.authentication_status == True):
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title("All API functions Pass/Fail Pie Chart")
+        ax1.set_title("All Users Dectection Pass/Fail Pie Chart")
         st.pyplot(fig5)
         
         
         
         
         
-        c.execute("SELECT requestUrl FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId")
-        function_name_1 = "getboundingbox"
-        count_func1 = 0
-        function_name_2 = "fileNameAndClass"
-        count_func2 = 0
-        function_name_3 = "imgSizeRange"
-        count_func3 = 0
-        function_name_4 = "aircraftPositionRange"
-        count_func4 = 0
-        function_name_5 = "aircraftNumandClass"
-        count_func5 = 0
-        function_name_6 = "random"
-        count_func6 = 0
-        function_name_7 = "display/image"
-        count_func7 = 0
+        c.execute("SELECT count(lt.requestUrl),ut.username FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE requestUrl LIKE '%qualityinspection%' GROUP BY ut.username")
+
         
-        #Todo 改名字
-        result = c.fetchall()
+        result = c.fetchall() 
+        #st.write((result)) # ((18, 'cheng'), (2, 'meihu'), (2, 'admin'))
+        api_call_num_list = []
+        user_list = []
+        
         for item in result:
-            if(function_name_1 in item[0]):
-               count_func1 += 1
-            if(function_name_2 in item[0]):
-                count_func2 += 1
-            if(function_name_3 in item[0]):
-                count_func3 += 1
-            if(function_name_4 in item[0]):
-                count_func4 += 1
-            if(function_name_5 in item[0]):
-                count_func5 += 1
-            if(function_name_6 in item[0]):
-                count_func6 += 1
-            elif(function_name_7 in item[0]):
-                count_func7 += 1
+            api_call_num_list.append(item[0])
+            user_list.append(item[1])
+        
         
         df3 = pd.DataFrame({
-            'function': [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7],
-            st.session_state.username: [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
+            'User': user_list,
+            'api calls': api_call_num_list
         })
 
-        df3 = df3.rename(columns={'function':'index'}).set_index('index')
+        df3 = df3.rename(columns={'User':'index'}).set_index('index')
 
-        #st.line_chart(df3)
+        # #st.line_chart(df3)
 
-        label1s = [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7]
-        size1s = [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        explode1 = (0, 0, 0, 0, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+        label1s = user_list
+        size1s = api_call_num_list
+        _length = len(user_list)
+        explode1 = [0] *  len(user_list)
 
         fig6, ax2 = plt.subplots()
         ax2.pie(size1s, explode=explode1, labels=label1s, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax2.set_title("All API functions Call Pie Chart")
+        ax2.set_title("User's Image detect Data Analysis")
         st.pyplot(fig6)
 
         st.bar_chart(df3)
