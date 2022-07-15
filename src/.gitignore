@@ -2,3 +2,4 @@ credentials/aws_s3_credentials.json
 mysql.yaml
 streamlit_config.yaml
 key.txt
+*/__pycache__

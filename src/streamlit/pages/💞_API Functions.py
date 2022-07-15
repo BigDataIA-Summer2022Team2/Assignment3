@@ -66,7 +66,7 @@ def function1():
         data = {'key':'value'}
         url = 'http://127.0.0.1:8000/qualityinspection/'
         data['file']= (filename,filedata)
-        #转换data数据的类型
+
         encode_data = encode_multipart_formdata(data)
         data = encode_data[0]
         header['Content-Type'] = encode_data[1]
