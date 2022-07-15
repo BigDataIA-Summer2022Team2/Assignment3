@@ -985,3 +985,1149 @@ PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x
 2022-07-14 23:13:17,210 loglevel=INFO   Waiting for application shutdown.
 2022-07-14 23:13:17,210 loglevel=INFO   Application shutdown complete.
 2022-07-14 23:13:17,211 loglevel=INFO   Finished server process [3820]
+2022-07-15 01:26:59,774 loglevel=INFO   Started server process [6620]
+2022-07-15 01:26:59,775 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:26:59,776 loglevel=INFO   Application startup complete.
+2022-07-15 01:26:59,884 loglevel=INFO   rid=IQK70T request url=http://127.0.0.1:8000/ completed_in=0.00ms status_code=200
+2022-07-15 01:26:59,960 loglevel=INFO   rid=HJ8SCC request url=http://127.0.0.1:8000/static/0041e69431bf872309d1aff628b6494f.jpg completed_in=48.04ms status_code=200
+2022-07-15 01:27:00,867 loglevel=INFO   rid=7KXFCU request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 01:27:01,105 loglevel=INFO   rid=3G7OLE request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-15 01:27:11,243 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 15, in qualityinspection
+    model = pickle.load(open(model_path, 'rb'))
+FileNotFoundError: [Errno 2] No such file or directory: 'H:\\Documents\\GitHub\\Assignment3\\model_pkl.pkl'
+2022-07-15 01:27:50,595 loglevel=INFO   Started server process [15988]
+2022-07-15 01:27:50,596 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:27:50,596 loglevel=INFO   Application startup complete.
+2022-07-15 01:28:01,111 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 15, in qualityinspection
+    model = pickle.load(open(model_path, 'rb'))
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://c56636e5-0fde-4468-870c-6fcfbcc4918f/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 01:30:32,972 loglevel=INFO   Started server process [1084]
+2022-07-15 01:30:32,973 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:30:32,973 loglevel=INFO   Application startup complete.
+2022-07-15 01:30:36,862 loglevel=INFO   rid=5CG4OO request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 01:30:36,990 loglevel=INFO   rid=W11K9T request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-15 01:30:50,594 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    model = pickle.load(file)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://da16d577-a4b7-42fb-bd41-a9bf1d0dad6f/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 01:37:09,543 loglevel=INFO   Started server process [4828]
+2022-07-15 01:37:09,544 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:37:09,544 loglevel=INFO   Application startup complete.
+2022-07-15 01:37:11,134 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('model_pkl.pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'model_pkl.pkl'
+2022-07-15 01:37:37,596 loglevel=INFO   Started server process [18312]
+2022-07-15 01:37:37,596 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:37:37,597 loglevel=INFO   Application startup complete.
+2022-07-15 01:37:38,901 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('./model_pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: './model_pkl'
+2022-07-15 01:37:49,098 loglevel=INFO   Started server process [14148]
+2022-07-15 01:37:49,098 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:37:49,099 loglevel=INFO   Application startup complete.
+2022-07-15 01:37:50,441 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('./model_pkl.pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: './model_pkl.pkl'
+2022-07-15 01:39:09,852 loglevel=INFO   Started server process [9128]
+2022-07-15 01:39:09,853 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:39:09,853 loglevel=INFO   Application startup complete.
+2022-07-15 01:39:16,182 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('./model_pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: './model_pkl'
+2022-07-15 01:39:33,155 loglevel=INFO   Started server process [2356]
+2022-07-15 01:39:33,156 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:39:33,156 loglevel=INFO   Application startup complete.
+2022-07-15 01:39:36,154 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('\\model_pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: '\\model_pkl'
+2022-07-15 01:41:50,854 loglevel=INFO   Started server process [16252]
+2022-07-15 01:41:50,854 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:41:50,855 loglevel=INFO   Application startup complete.
+2022-07-15 01:42:06,910 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 16, in qualityinspection
+    with open('model_pkl', 'rb') as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'model_pkl'
+2022-07-15 01:44:30,362 loglevel=INFO   Started server process [12568]
+2022-07-15 01:44:30,363 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:44:30,363 loglevel=INFO   Application startup complete.
+2022-07-15 01:44:30,619 loglevel=INFO   rid=Z0RFUU request url=http://127.0.0.1:8000/ completed_in=1.00ms status_code=200
+2022-07-15 01:44:31,743 loglevel=INFO   rid=6E0ABB request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 01:44:31,807 loglevel=INFO   rid=U4R9A2 request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-15 01:44:38,751 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('H:\Documents\GitHub\Assignment3\src\api_functions\model_pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 579, in load
+    with open(filename, 'rb') as f:
+OSError: [Errno 22] Invalid argument: 'H:\\Documents\\GitHub\\Assignment3\\src\x07pi_functions\\model_pkl'
+2022-07-15 01:45:16,579 loglevel=INFO   Started server process [3380]
+2022-07-15 01:45:16,579 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:45:16,580 loglevel=INFO   Application startup complete.
+2022-07-15 01:45:23,896 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('H:\\Documents\\GitHub\\Assignment3\\src\\api_functions\\model_pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1590, in load_reduce
+    stack[-1] = func(*args)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://08212a48-e349-4eec-8f65-5ad250bb2bf1/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 01:47:33,401 loglevel=INFO   Started server process [12052]
+2022-07-15 01:47:33,401 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:47:33,402 loglevel=INFO   Application startup complete.
+2022-07-15 01:56:52,746 loglevel=INFO   Started server process [968]
+2022-07-15 01:56:52,746 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:56:52,747 loglevel=INFO   Application startup complete.
+2022-07-15 01:56:52,880 loglevel=INFO   rid=DPKUZH request url=http://127.0.0.1:8000/ completed_in=0.00ms status_code=200
+2022-07-15 01:56:59,090 loglevel=INFO   rid=5HSB51 request url=http://127.0.0.1:8000/docs completed_in=1.00ms status_code=200
+2022-07-15 01:56:59,152 loglevel=INFO   rid=MBWVZ6 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-15 01:57:15,050 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('model.pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1590, in load_reduce
+    stack[-1] = func(*args)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://b4fcf204-45c5-4c1b-b04d-11e7d1ce6fbd/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 01:59:00,364 loglevel=INFO   Started server process [2936]
+2022-07-15 01:59:00,365 loglevel=INFO   Waiting for application startup.
+2022-07-15 01:59:00,366 loglevel=INFO   Application startup complete.
+2022-07-15 01:59:04,836 loglevel=INFO   rid=LCEOTK request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 01:59:04,907 loglevel=INFO   rid=WIQUI7 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-15 01:59:16,175 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('model.pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1590, in load_reduce
+    stack[-1] = func(*args)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://93e43ae0-020d-4762-99cd-ac6151256b89/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 02:03:18,814 loglevel=INFO   Started server process [2276]
+2022-07-15 02:03:18,814 loglevel=INFO   Waiting for application startup.
+2022-07-15 02:03:18,815 loglevel=INFO   Application startup complete.
+2022-07-15 02:03:29,888 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('./model.pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1590, in load_reduce
+    stack[-1] = func(*args)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://c54c37df-11b2-49c9-abbc-8652341999be/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 02:08:04,879 loglevel=INFO   Shutting down
+2022-07-15 18:39:20,756 loglevel=INFO   Started server process [5656]
+2022-07-15 18:39:20,757 loglevel=INFO   Waiting for application startup.
+2022-07-15 18:39:20,757 loglevel=INFO   Application startup complete.
+2022-07-15 18:39:21,673 loglevel=INFO   rid=WO8F1Z request url=http://127.0.0.1:8000/ completed_in=1.00ms status_code=200
+2022-07-15 18:39:21,794 loglevel=INFO   rid=9TVJQZ request url=http://127.0.0.1:8000/static/0041e69431bf872309d1aff628b6494f.jpg completed_in=47.04ms status_code=200
+2022-07-15 18:39:23,064 loglevel=INFO   rid=S1IGTA request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 18:39:23,280 loglevel=INFO   rid=6U0DJE request url=http://127.0.0.1:8000/openapi.json completed_in=5.00ms status_code=200
+2022-07-15 18:39:37,098 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 14, in qualityinspection
+    model = joblib.load('./model.pkl')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\joblib\numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.1520.0_x64__qbz5n2kfra8p0\lib\pickle.py", line 1590, in load_reduce
+    stack[-1] = func(*args)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\pickle_utils.py", line 48, in deserialize_model_from_bytecode
+    model = save_module.load_model(temp_dir)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\tensorflow\python\saved_model\load.py", line 915, in load_partial
+    raise FileNotFoundError(
+FileNotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for ram://b94a217c-31be-4cca-9e84-b80d58fe696a/variables/variables
+ You may be trying to load on a different device from the computational device. Consider setting the `experimental_io_device` option in `tf.saved_model.LoadOptions` to the io_device such as '/job:localhost'.
+2022-07-15 18:41:59,774 loglevel=INFO   Started server process [16148]
+2022-07-15 18:41:59,774 loglevel=INFO   Waiting for application startup.
+2022-07-15 18:41:59,775 loglevel=INFO   Application startup complete.
+2022-07-15 18:42:01,933 loglevel=INFO   rid=IQOPFQ request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 18:42:02,062 loglevel=INFO   rid=UDI1YC request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-15 18:42:06,895 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 21, in qualityinspection
+    model = load_model('model.h5')
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\save.py", line 206, in load_model
+    raise IOError(f'No file or directory found at {filepath_str}')
+OSError: No file or directory found at model.h5
+2022-07-15 18:42:43,881 loglevel=INFO   Started server process [8616]
+2022-07-15 18:42:43,882 loglevel=INFO   Waiting for application startup.
+2022-07-15 18:42:43,882 loglevel=INFO   Application startup complete.
+2022-07-15 18:42:46,091 loglevel=INFO   rid=7LQ1EU request url=http://127.0.0.1:8000/docs completed_in=1.00ms status_code=200
+2022-07-15 18:42:46,163 loglevel=INFO   rid=W1RXY6 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-15 18:42:50,283 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 21, in qualityinspection
+    model = load_model(model_path)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\save.py", line 206, in load_model
+    raise IOError(f'No file or directory found at {filepath_str}')
+OSError: No file or directory found at H:\Documents\GitHub\Assignment3\model,h5
+2022-07-15 18:43:03,466 loglevel=INFO   Started server process [1964]
+2022-07-15 18:43:03,467 loglevel=INFO   Waiting for application startup.
+2022-07-15 18:43:03,467 loglevel=INFO   Application startup complete.
+2022-07-15 18:43:04,021 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 21, in qualityinspection
+    model = load_model(model_path)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\save.py", line 206, in load_model
+    raise IOError(f'No file or directory found at {filepath_str}')
+OSError: No file or directory found at H:\Documents\GitHub\Assignment3\model.h5
+2022-07-15 18:43:05,601 loglevel=INFO   rid=1HZ03J request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 18:43:05,668 loglevel=INFO   rid=2PVGI5 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-15 18:43:09,988 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 21, in qualityinspection
+    model = load_model(model_path)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\keras\saving\save.py", line 206, in load_model
+    raise IOError(f'No file or directory found at {filepath_str}')
+OSError: No file or directory found at H:\Documents\GitHub\Assignment3\model.h5
+2022-07-15 18:43:34,495 loglevel=INFO   Started server process [14364]
+2022-07-15 18:43:34,496 loglevel=INFO   Waiting for application startup.
+2022-07-15 18:43:34,496 loglevel=INFO   Application startup complete.
+2022-07-15 18:43:34,500 loglevel=INFO   rid=9PCMGY request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 18:43:34,578 loglevel=INFO   rid=788RXX request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-15 18:43:43,951 loglevel=INFO   rid=W12LO9 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=5739.41ms status_code=200
+2022-07-15 18:43:48,910 loglevel=INFO   Shutting down

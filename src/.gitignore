@@ -3,3 +3,5 @@ mysql.yaml
 streamlit_config.yaml
 key.txt
 */__pycache__
+test
+train
