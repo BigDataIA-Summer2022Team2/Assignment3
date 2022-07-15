@@ -44,8 +44,16 @@ def function1():
     st.sidebar.markdown("# Function 1 🎈")
     #randNum = st.sidebar.number_input("Pick a number for random images [1,9]",1,9,step=1)
     isClick = st.sidebar.button("OK")
-    if isClick:
-        st.write(isClick)
+    
+        
+    uploaded_files = st.file_uploader(label="Image File Upload",type=['png', 'jpg', 'jpeg', 'svg'], accept_multiple_files = True, key="image")
+    
+    
+    for uploaded_file in uploaded_files:
+        bytes_data = uploaded_file.read()
+        st.write("filename:", uploaded_file.name)
+        st.write(bytes_data)
+        
         #url = 'http://127.0.0.1:8000/api/get/random/'
         #data = {'num' : randNum}
         #response = getFastAPIResponse(url,data)

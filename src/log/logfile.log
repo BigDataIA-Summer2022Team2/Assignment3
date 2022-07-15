@@ -1,0 +1,13 @@
+2022-07-11 22:31:35,766 loglevel=INFO   Started server process [2256]
+2022-07-11 22:31:35,767 loglevel=INFO   Waiting for application startup.
+2022-07-11 22:31:35,767 loglevel=INFO   Application startup complete.
+2022-07-11 22:31:36,006 loglevel=INFO   rid=YGOYAA request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-11 22:31:36,331 loglevel=INFO   rid=GZOND9 request url=http://127.0.0.1:8000/openapi.json completed_in=5.01ms status_code=200
+2022-07-12 00:02:12,560 loglevel=INFO   Shutting down
+2022-07-14 20:22:57,564 loglevel=INFO   Started server process [23684]
+2022-07-14 20:22:57,565 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:22:57,567 loglevel=INFO   Application startup complete.
+2022-07-14 20:23:07,111 loglevel=INFO   rid=Z6QQBM request url=http://127.0.0.1:8000/token completed_in=251.50ms status_code=200
+2022-07-14 20:24:55,167 loglevel=INFO   Started server process [16520]
+2022-07-14 20:24:55,168 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:24:55,168 loglevel=INFO   Application startup complete.
