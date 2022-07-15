@@ -1,4 +1,3 @@
-
 from pickle import GLOBAL
 import random
 import string
@@ -27,6 +26,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
+import uvicorn
 ################################################################
 
 
@@ -342,4 +342,5 @@ class csvInfo(BaseModel):
     aircraft_more_than_1 : bool=None
     aircraft_num : int=None
     
-    
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=3000)    
