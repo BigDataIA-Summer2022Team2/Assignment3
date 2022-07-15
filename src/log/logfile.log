@@ -1,3 +1,634 @@
+
+2022-07-14 20:18:12,503 loglevel=INFO   Started server process [1688]
+2022-07-14 20:18:12,503 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:18:12,504 loglevel=INFO   Application startup complete.
+2022-07-14 20:18:20,899 loglevel=INFO   rid=P6T3XN request url=http://127.0.0.1:8000/ completed_in=0.00ms status_code=200
+2022-07-14 20:18:20,986 loglevel=INFO   rid=5KPWI4 request url=http://127.0.0.1:8000/static/0041e69431bf872309d1aff628b6494f.jpg completed_in=50.05ms status_code=200
+2022-07-14 20:18:28,374 loglevel=INFO   rid=EMEGCK request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 20:18:28,589 loglevel=INFO   rid=UT9XFJ request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:18:51,624 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 246, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 192, in login_for_access_token
+    user = authenticate_user(form_data.username, form_data.password)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 145, in authenticate_user
+    if not verify_password(password, user.hashed_password):
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 111, in verify_password
+    return pwd_context.verify(plain_password, hashed_password)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\context.py", line 2347, in verify
+    return record.verify(secret, hash, **kwds)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\passlib\utils\handlers.py", line 2176, in set_backend
+    raise default_error
+passlib.exc.MissingBackendError: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+2022-07-14 20:19:13,272 loglevel=INFO   Shutting down
+2022-07-14 20:19:13,382 loglevel=INFO   Waiting for application shutdown.
+2022-07-14 20:19:13,382 loglevel=INFO   Application shutdown complete.
+2022-07-14 20:19:13,383 loglevel=INFO   Finished server process [1688]
+2022-07-14 20:19:25,468 loglevel=INFO   Started server process [6768]
+2022-07-14 20:19:25,468 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:19:25,469 loglevel=INFO   Application startup complete.
+2022-07-14 20:19:28,630 loglevel=INFO   rid=OI5GHN request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 20:19:28,761 loglevel=INFO   rid=W7NXSU request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:19:34,765 loglevel=INFO   rid=STB7E5 request url=http://127.0.0.1:8000/token completed_in=225.21ms status_code=200
+2022-07-14 20:21:06,960 loglevel=INFO   Started server process [7312]
+2022-07-14 20:21:06,961 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:21:06,961 loglevel=INFO   Application startup complete.
+2022-07-14 20:22:56,928 loglevel=INFO   Started server process [15576]
+2022-07-14 20:22:56,929 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:22:56,929 loglevel=INFO   Application startup complete.
+2022-07-14 20:22:58,594 loglevel=INFO   rid=TAZGE9 request url=http://127.0.0.1:8000/docs completed_in=1.00ms status_code=200
+2022-07-14 20:22:58,669 loglevel=INFO   rid=H9F6ZV request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:23:03,590 loglevel=INFO   rid=NFOBPD request url=http://127.0.0.1:8000/token completed_in=226.21ms status_code=200
+2022-07-14 20:23:14,162 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 302, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 18, in qualityinspection
+    img = keras.utils.load_img(file, target_size = (256, 256))
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\utils\image_utils.py", line 396, in load_img
+    raise TypeError('path should be path-like or io.BytesIO'
+TypeError: path should be path-like or io.BytesIO, not <class 'starlette.datastructures.UploadFile'>
+2022-07-14 20:24:55,218 loglevel=INFO   Started server process [5992]
+2022-07-14 20:24:55,219 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:24:55,219 loglevel=INFO   Application startup complete.
+2022-07-14 20:24:57,079 loglevel=INFO   Shutting down
+2022-07-14 20:24:57,187 loglevel=INFO   Waiting for application shutdown.
+2022-07-14 20:24:57,187 loglevel=INFO   Application shutdown complete.
+2022-07-14 20:24:57,188 loglevel=INFO   Finished server process [5992]
+2022-07-14 20:33:38,844 loglevel=INFO   Started server process [1896]
+2022-07-14 20:33:38,845 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:33:38,845 loglevel=INFO   Application startup complete.
+2022-07-14 20:33:44,832 loglevel=INFO   rid=RLLV0K request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 20:33:44,953 loglevel=INFO   rid=RQB75S request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:33:56,714 loglevel=INFO   rid=YPU4T4 request url=http://127.0.0.1:8000/token completed_in=223.20ms status_code=200
+2022-07-14 20:34:03,510 loglevel=INFO   rid=T21DV4 request url=http://127.0.0.1:8000/files/ completed_in=69.05ms status_code=200
+2022-07-14 20:35:46,089 loglevel=INFO   Started server process [5080]
+2022-07-14 20:35:46,089 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:35:46,090 loglevel=INFO   Application startup complete.
+2022-07-14 20:35:46,843 loglevel=INFO   rid=VVEK6C request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 20:35:46,976 loglevel=INFO   rid=D56ZXX request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:43:32,492 loglevel=INFO   Started server process [8524]
+2022-07-14 20:43:32,492 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:43:32,493 loglevel=INFO   Application startup complete.
+2022-07-14 20:44:09,608 loglevel=INFO   Started server process [2272]
+2022-07-14 20:44:09,609 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:44:09,609 loglevel=INFO   Application startup complete.
+2022-07-14 20:44:12,698 loglevel=INFO   rid=LBLWJK request url=http://127.0.0.1:8000/docs completed_in=1.00ms status_code=200
+2022-07-14 20:44:12,807 loglevel=INFO   rid=I8QMDK request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 20:44:18,231 loglevel=INFO   rid=5L9T4N request url=http://127.0.0.1:8000/token completed_in=225.20ms status_code=200
+2022-07-14 20:44:42,001 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 303, in qualityinspection
+    response = test_model.qualityinspection(files)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 24, in qualityinspection
+    img = Image.open(io.BytesIO(file))
+TypeError: a bytes-like object is required, not 'list'
+2022-07-14 20:45:37,682 loglevel=INFO   Started server process [14236]
+2022-07-14 20:45:37,682 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:45:37,683 loglevel=INFO   Application startup complete.
+2022-07-14 20:45:40,393 loglevel=INFO   rid=DF4JC7 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 20:45:40,529 loglevel=INFO   rid=CW2G4S request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-14 20:45:45,431 loglevel=INFO   rid=RD7B3B request url=http://127.0.0.1:8000/token completed_in=223.20ms status_code=200
+2022-07-14 20:45:52,657 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 303, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 27, in qualityinspection
+    img = Image.img_to_array(img)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\PIL\Image.py", line 76, in __getattr__
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'PIL.Image' has no attribute 'img_to_array'
+2022-07-14 20:47:09,953 loglevel=INFO   Started server process [14192]
+2022-07-14 20:47:09,954 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:47:09,954 loglevel=INFO   Application startup complete.
+2022-07-14 20:47:14,456 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 303, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 28, in qualityinspection
+    prediction = model.predict(img)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\79972\AppData\Local\Temp\__autograph_generated_file0e7gjhow.py", line 15, in tf__predict_function
+    retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
+ValueError: in user code:
+
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\engine\training.py", line 1845, in predict_function  *
+        return step_function(self, iterator)
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\engine\training.py", line 1834, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\engine\training.py", line 1823, in run_step  **
+        outputs = model.predict_step(data)
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\engine\training.py", line 1791, in predict_step
+        return self(x, training=False)
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\utils\traceback_utils.py", line 67, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\keras\engine\input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 256, 256, 3), found shape=(32, 256, 3)
+
+2022-07-14 20:48:11,023 loglevel=INFO   Started server process [8912]
+2022-07-14 20:48:11,023 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:48:11,024 loglevel=INFO   Application startup complete.
+2022-07-14 20:48:18,800 loglevel=INFO   rid=CKQ8XL request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2929.19ms status_code=200
+2022-07-14 20:48:51,115 loglevel=INFO   rid=6WI211 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2920.24ms status_code=200
+2022-07-14 20:49:17,006 loglevel=INFO   rid=EIQSL6 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2892.70ms status_code=200
+2022-07-14 20:56:54,945 loglevel=INFO   Started server process [9972]
+2022-07-14 20:56:54,946 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:56:54,947 loglevel=INFO   Application startup complete.
+2022-07-14 20:58:23,304 loglevel=INFO   Started server process [15008]
+2022-07-14 20:58:23,304 loglevel=INFO   Waiting for application startup.
+2022-07-14 20:58:23,305 loglevel=INFO   Application startup complete.
+2022-07-14 20:58:29,042 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 301, in qualityinspection
+    filename = file.filename
+AttributeError: 'bytes' object has no attribute 'filename'
+2022-07-14 21:00:03,794 loglevel=INFO   Started server process [13716]
+2022-07-14 21:00:03,794 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:00:03,795 loglevel=INFO   Application startup complete.
+2022-07-14 21:00:09,737 loglevel=INFO   rid=AN6XZD request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:00:09,808 loglevel=INFO   rid=HHYFO9 request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-14 21:00:14,608 loglevel=INFO   rid=GYJSZI request url=http://127.0.0.1:8000/token completed_in=223.20ms status_code=200
+2022-07-14 21:02:02,170 loglevel=INFO   Started server process [15704]
+2022-07-14 21:02:02,170 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:02:02,171 loglevel=INFO   Application startup complete.
+2022-07-14 21:03:02,548 loglevel=INFO   Started server process [3912]
+2022-07-14 21:03:02,548 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:03:02,549 loglevel=INFO   Application startup complete.
+2022-07-14 21:03:03,180 loglevel=INFO   rid=DE9NZ2 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:03:03,253 loglevel=INFO   rid=27G97O request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-14 21:03:08,865 loglevel=INFO   rid=1NPQ6I request url=http://127.0.0.1:8000/token completed_in=225.20ms status_code=200
+2022-07-14 21:03:41,219 loglevel=INFO   rid=5BOG5K request url=http://127.0.0.1:8000/qualityinspection/?filename=fgsfg completed_in=2912.44ms status_code=200
+2022-07-14 21:06:01,656 loglevel=INFO   Started server process [14148]
+2022-07-14 21:06:01,657 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:06:01,657 loglevel=INFO   Application startup complete.
+2022-07-14 21:06:04,497 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+TypeError: qualityinspection() missing 1 required positional argument: 'file'
+2022-07-14 21:06:06,419 loglevel=INFO   rid=K6RGXY request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:06:06,540 loglevel=INFO   rid=W7380B request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-14 21:06:13,406 loglevel=INFO   rid=TJH9M3 request url=http://127.0.0.1:8000/token completed_in=223.09ms status_code=200
+2022-07-14 21:06:31,767 loglevel=INFO   Started server process [11172]
+2022-07-14 21:06:31,767 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:06:31,768 loglevel=INFO   Application startup complete.
+2022-07-14 21:06:32,237 loglevel=INFO   rid=62Z0I1 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:06:32,369 loglevel=INFO   rid=PNCPPI request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 21:06:37,523 loglevel=INFO   rid=U5Y3R7 request url=http://127.0.0.1:8000/token completed_in=224.20ms status_code=200
+2022-07-14 21:06:53,017 loglevel=INFO   rid=Q0ZXCW request url=http://127.0.0.1:8000/qualityinspection/?filename=dfaljhljadf completed_in=2887.38ms status_code=200
+2022-07-14 21:09:54,808 loglevel=INFO   rid=P0NPWU request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=405
+2022-07-14 21:09:54,840 loglevel=INFO   rid=022DX6 request url=http://127.0.0.1:8000/favicon.ico completed_in=1.00ms status_code=404
+2022-07-14 21:13:07,648 loglevel=INFO   Started server process [13036]
+2022-07-14 21:13:07,649 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:13:07,649 loglevel=INFO   Application startup complete.
+2022-07-14 21:13:09,040 loglevel=INFO   rid=FNM5L4 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:13:09,110 loglevel=INFO   rid=IIKYY1 request url=http://127.0.0.1:8000/openapi.json completed_in=3.00ms status_code=200
+2022-07-14 21:13:16,222 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 403, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 308, in qualityinspection
+    return file.filename
+AttributeError: 'bytes' object has no attribute 'filename'
+2022-07-14 21:13:35,246 loglevel=INFO   Started server process [10680]
+2022-07-14 21:13:35,247 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:13:35,248 loglevel=INFO   Application startup complete.
+2022-07-14 21:17:15,118 loglevel=INFO   Started server process [5908]
+2022-07-14 21:17:15,119 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:17:15,120 loglevel=INFO   Application startup complete.
+2022-07-14 21:17:16,279 loglevel=INFO   rid=SDGKFL request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:17:16,400 loglevel=INFO   rid=T8IBAG request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 21:20:44,355 loglevel=INFO   Started server process [3064]
+2022-07-14 21:20:44,356 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:20:44,356 loglevel=INFO   Application startup complete.
+2022-07-14 21:20:49,096 loglevel=INFO   rid=P6BVQ0 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:20:49,218 loglevel=INFO   rid=WA3A2H request url=http://127.0.0.1:8000/openapi.json completed_in=5.00ms status_code=200
+2022-07-14 21:21:12,154 loglevel=INFO   Started server process [1656]
+2022-07-14 21:21:12,155 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:21:12,155 loglevel=INFO   Application startup complete.
+2022-07-14 21:21:13,179 loglevel=INFO   rid=S39CO6 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 21:21:13,317 loglevel=INFO   rid=T66Z66 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 21:22:39,515 loglevel=INFO   Started server process [15428]
+2022-07-14 21:22:39,516 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:22:39,516 loglevel=INFO   Application startup complete.
+
 2022-07-11 22:31:35,766 loglevel=INFO   Started server process [2256]
 2022-07-11 22:31:35,767 loglevel=INFO   Waiting for application startup.
 2022-07-11 22:31:35,767 loglevel=INFO   Application startup complete.
@@ -11,3 +642,4 @@
 2022-07-14 20:24:55,167 loglevel=INFO   Started server process [16520]
 2022-07-14 20:24:55,168 loglevel=INFO   Waiting for application startup.
 2022-07-14 20:24:55,168 loglevel=INFO   Application startup complete.
+

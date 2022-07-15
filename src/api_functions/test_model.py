@@ -4,8 +4,9 @@ from keras.models import load_model
 import numpy as np
 import os
 from keras.applications.inception_v3 import preprocess_input
-
-def qualityinspection(file):
+from PIL import Image
+import io
+def qualityinspection(filename, file):
     STATUS = ["Defect", "Ok"]
 
     abs_path = os.path.dirname(os.path.dirname(os.path.dirname((os.path.abspath(__file__)))))
@@ -15,14 +16,22 @@ def qualityinspection(file):
     model.compile(optimizer="adam",loss='binary_crossentropy',metrics=['accuracy'])
 
     #img = keras.utils.load_img(abs_path + '\\src\\api_functions\\cast_def_0_148.jpeg', target_size = (256, 256))
-    img = keras.utils.load_img(file, target_size = (256, 256))
+    # img = keras.utils.load_img(file, target_size = (256, 256))
+    # img = keras.utils.img_to_array(img)
+    # img = np.expand_dims(img,axis=0)
+    # img = preprocess_input(img)
+
+    img = Image.open(io.BytesIO(file))
+    img = img.convert('RGB')
+    img = img.resize((256, 256), Image.NEAREST)
     img = keras.utils.img_to_array(img)
     img = np.expand_dims(img,axis=0)
     img = preprocess_input(img)
-
     prediction = model.predict(img)
     # print(prediction[0][0])
 
     x = (prediction > 0.5).astype("int32")
-
-    return STATUS[x[0][0]]
+    response = {}
+    response["image name"] = filename
+    response["status"] = STATUS[x[0][0]]
+    return response
