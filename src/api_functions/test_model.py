@@ -6,13 +6,19 @@ import os
 from keras.applications.inception_v3 import preprocess_input
 from PIL import Image
 import io
+import pickle
+import joblib
+#import tflearn
 def qualityinspection(file):
     STATUS = ["Defect", "Ok"]
-
+    #model = joblib.load('./model.pkl')
     abs_path = os.path.dirname(os.path.dirname(os.path.dirname((os.path.abspath(__file__)))))
     model_path = abs_path+"\\trained_model.h5"
+    # with open('model_pkl', 'rb') as file:  
+    #     model = pickle.load(file)
+    #model = pickle.load(open(model_path, 'rb'))
+    #pickle.load(open(model_path, 'rb'))
     model = load_model(model_path)
-
     model.compile(optimizer="adam",loss='binary_crossentropy',metrics=['accuracy'])
 
     #img = keras.utils.load_img(abs_path + '\\src\\api_functions\\cast_def_0_148.jpeg', target_size = (256, 256))
