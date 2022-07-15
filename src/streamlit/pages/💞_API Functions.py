@@ -4,6 +4,8 @@ import yaml
 import requests
 import json
 import io
+import pandas as pd
+import numpy as np
 from io import BytesIO
 import time
 import os
@@ -25,11 +27,18 @@ st.set_page_config(page_title="API Functions",page_icon=":heart:")
 
 
 # get response from FastAPI
-def getFastAPIResponse(url,data):
+def getFastAPIResponse(url,filename,filedata):
     
     token_str = 'bearer ' + st.session_state["token"]
-    headers = {'accept': 'application/json','authorization': str(token_str)}
-    response = requests.get(url=url,params=data,headers=headers)
+    headers = {'Accept': '*/*','authorization': str(token_str)}
+    file = {
+                "filename" : filename,
+                'file': filedata,
+                "Content-Type" : "application/octet-stream",
+                "Content-Disposition": "form-data"
+            }
+    
+    response = requests.post(url=url, headers = headers, files=file)
 
     return response
 
@@ -40,93 +49,54 @@ def getFastAPIResponse(url,data):
 
 ############################################# API Functions Calling #############################################
 def function1():
-    st.markdown("# Check 🎈")
-    st.sidebar.markdown("# Function 1 🎈")
-    #randNum = st.sidebar.number_input("Pick a number for random images [1,9]",1,9,step=1)
+    st.markdown("# Casting Product Image Data for Quality Inspection 🎈")
+    #randNum = st.sidebar.number_input("Pick a number for random images [1,9]",1,9,step=1)    
+        
+    uploaded_files = st.sidebar.file_uploader(label="Image File Upload",type=['png', 'jpg', 'jpeg', 'svg'], accept_multiple_files = True, key="image")
     isClick = st.sidebar.button("OK")
-    
+    if isClick:
+        for i in range(len(uploaded_files)-1,-1,-1):
+            res_dict={}
+            filename = uploaded_files[i].name
+            filetype = uploaded_files[i].type
+            filesize = uploaded_files[i].size
+            filedata = uploaded_files[i].read()
         
-    uploaded_files = st.file_uploader(label="Image File Upload",type=['png', 'jpg', 'jpeg', 'svg'], accept_multiple_files = True, key="image")
-    
-    
-    for i in range(0,len(uploaded_files)):
-        filename = uploaded_files[i].name
-        filetype = uploaded_files[i].type
-        filesize = uploaded_files[i].size
-        filedata = uploaded_files[i].read()
-        
-        
-        st.write(filename)
-        st.write(filetype)
-        st.write(filesize)
-        st.write(type(filedata))
-        
-        
-        
-        
-        #header = {"Content-Type" : "multipart/form-data"}
-        file = {
-            "filename" : filename,
-            'file': filedata,
-            "Content-Type" : "application/octet-stream",
-            "Content-Disposition": "form-data"
-        }
-        url = 'http://127.0.0.1:8000/qualityinspection/'
+            
+            url = 'http://127.0.0.1:8000/qualityinspection/'
+            response = getFastAPIResponse(url,filename,filedata)
+            
+            if(response.content[0] == 123): # json style
 
-        # encode_data = encode_multipart_formdata(data)
-        # data = encode_data[0]
-        headers = {
-            "Accept": "image/jpeg"
-        }
-        response = requests.post(url=url, headers = headers, files=file)
-        
-        st.write(response)
-    
-    
-    # url = 'http://127.0.0.1:8000/qualityinspection/'
-    # files = {'attach': ('p5.png', open('../p5.png', 'rb'))}
-
-        #url = 'http://127.0.0.1:8000/api/get/random/'
-        #data = {'num' : randNum}
-        #response = getFastAPIResponse(url,data)
-    
-        #st.write(response.content[0])
-        if(response.content[0]  == 123): # json style
-            st.write(1)
-            res_j = response.json()
-            if "detail" in res_j.keys():
-                if res_j["detail"] == "Could not validate credentials":
-                    st.warning("You should login again!")
-                    st.session_state.authentication_status = None
-                    time.sleep(2)
-                    st.experimental_rerun()
-                elif res_j["detail"] == "Item not found":
-                    st.error("There is no target image file! Please try again or click hint to try our sample!")
+                res_j = response.json()
+                if "detail" in res_j.keys():
+                    if res_j["detail"] == "Could not validate credentials":
+                        st.warning("You should login again!")
+                        st.session_state.authentication_status = None
+                        time.sleep(2)
+                        st.experimental_rerun()
+                    elif res_j["detail"] == "Item not found":
+                        st.error("There is no target image file! Please try again or click hint to try our sample!")
+                    else:
+                        st.error("New error which is not handled. Please contact us ASAP!")
                 else:
-                    st.error("New error which is not handled. Please contact us ASAP!")
+                    st.success("You did it! :heart:")
+                    res_dict[filename] = {}
+                    res_dict[filename]["filetype"] = filetype
+                    res_dict[filename]["status"] = res_j["status"]
+                    res_dict[filename]["probability"] = res_j["probability"]
+                    
+                    st.image(filedata,width=256)
+                    st.table(res_dict)
+                    
+                    
+                    
+                
+            elif(response.content[0] == 255): # image style
+                st.error("Return response is in image format! Something went wrong! Please contact us for help!")
+                
             else:
-                st.success("You did it! :heart:")
-                st.json(res_j)
-                # with st.expander("Image file list",expanded=True):
-                #     st.json(res_j)
-                # with st.expander("Full images file info",expanded=False):
-                #     for i in range(randNum):
-                #         filename = str(res_j.get(str(i+1)))
-                #         print(filename)
-                #         data1 = {"filename":filename}
-                #         url1 = 'http://127.0.0.1:8000/api/get/fileNameAndClass'
-                #         response1 = getFastAPIResponse(url1,data1).json()
-                #         st.json(response1)
-                    #Todo display images
-            
-        elif(response.content[0] == 255): # image style
-            st.write(2)
-        #     st.success("You did it! :heart:")
-        #     img_data = Image.open(io.BytesIO(response.content))
-        #     st.image(img_data)
-            
-        # else:
-        #     st.error("Seomthing went wrong! Please contact us for help!")
+                st.error("Seomthing went wrong! Please contact us for help!")
 
     
 
@@ -146,7 +116,7 @@ config['cookie']['expiry_days']
 )
 
 func_num = {
-    "Function 1": function1,
+    "Quality inspection": function1,
 }
 
 

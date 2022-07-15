@@ -13,15 +13,6 @@ import os
 
 #st.session_state
 
-def modify_start_date_to_default():
-    if(st.session_state.log_start > st.session_state.log_end):
-        st.session_state.log_start = datetime.date(2022, 6, 29)    
-        st.error("Start date should be earlier than or equal to end date")
-    
-def modify_end_date_to_default():
-    if(st.session_state.log_end < st.session_state.log_start):
-        st.session_state.log_end = datetime.date(2022, 6, 29)    
-        st.error("End date should be later than or rqual to start date")
 
 with open('./streamlit_config.yaml') as file:
         config = yaml.safe_load(file)
@@ -60,10 +51,11 @@ with st.sidebar:
         options = st.multiselect(
             'What log info you want to get?',
             ['logId','requestUrl','userId', 'response', 'logTime', 'code_', 'username','level_','processTime'],
-            ['logId','username','requestUrl','code_','level_'],key="log_output_selection")
+            ['logId','username','requestUrl','code_','level_','response'],key="log_output_selection")
 
         num_logs = st.number_input(label="Choose number of logs you want to see", min_value=0, max_value=40, step=5)
         isNumLogsButtonClick = st.button("OK")
+        
 if(st.session_state.authentication_status == None or st.session_state.authentication_status == False):
     st.header("Please go to ***Home Page and login***!")
     st.session_state.token = ''
@@ -84,7 +76,7 @@ if(st.session_state.authentication_status == True):
                     else:
                         sql = sql + "lt." + str(item) + ", "
                 
-            sql = sql + " FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE ut.username = '" + st.session_state.username + "' LIMIT " + str(num_logs)
+            sql = sql + " FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE ut.username = '" + st.session_state.username + "' AND lt.requestURL LIKE '%qualityinspection%' LIMIT " + str(num_logs)
             #st.write(sql)
             c.execute(sql)
             result = c.fetchall()
@@ -117,14 +109,15 @@ if(st.session_state.authentication_status == True):
     if(st.session_state["username"] != "cheng" and st.session_state["username"] != "meihu" and st.session_state["username"] != "root" and st.session_state["username"] != "admin"):
         
     
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%'")
         count_current_user_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
+        
         count_success_user_log = c.fetchall()[0][0]
         #st.write(count_success_user_log)
         #Creating the dataset
-        keys = ["success","fail","all"]
+        keys = ["Ok","Defect","all"]
         #keys.append(st.session_state.username)
         values = [count_success_user_log,count_current_user_log-count_success_user_log,count_current_user_log]
         #values.append(count_current_user_log)
@@ -140,7 +133,7 @@ if(st.session_state.authentication_status == True):
         
         ###########################################
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'pass', 'fail'
+        labels = 'Ok', 'Defect'
         sizes = [count_success_user_log, count_current_user_log-count_success_user_log]
         explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
@@ -151,109 +144,51 @@ if(st.session_state.authentication_status == True):
         ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
         st.pyplot(fig1)
         
-        
-        #####################################################
-        c.execute("SELECT requestUrl FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
-        function_name_1 = "getboundingbox"
-        count_func1 = 0
-        function_name_2 = "fileNameAndClass"
-        count_func2 = 0
-        function_name_3 = "imgSizeRange"
-        count_func3 = 0
-        function_name_4 = "aircraftPositionRange"
-        count_func4 = 0
-        function_name_5 = "aircraftNumandClass"
-        count_func5 = 0
-        function_name_6 = "random"
-        count_func6 = 0
-        function_name_7 = "display/image"
-        count_func7 = 0
-        
-        #Todo 改名字
-        result = c.fetchall()
-        for item in result:
-            if(function_name_1 in item[0]):
-               count_func1 += 1
-            elif(function_name_2 in item[0]):
-                count_func2 += 1
-            elif(function_name_3 in item[0]):
-                count_func3 += 1
-            elif(function_name_4 in item[0]):
-                count_func4 += 1
-            elif(function_name_5 in item[0]):
-                count_func5 += 1
-            elif(function_name_6 in item[0]):
-                count_func6 += 1
-            elif(function_name_7 in item[0]):
-                count_func7 += 1
-        
-        
-        df2 = pd.DataFrame({
-            'function': [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7],
-            st.session_state.username: [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        })
-
-        df2 = df2.rename(columns={'function':'index'}).set_index('index')
-
-        #st.line_chart(df2)
-        
-
-
-        label1s = [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7]
-        size1s = [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        explode1 = (0, 0, 0, 0, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-
-        fig6, ax2 = plt.subplots()
-        ax2.pie(size1s, explode=explode1, labels=label1s, autopct='%1.1f%%',
-                shadow=True, startangle=90)
-        ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax2.set_title("All API functions Pass/Fail Pie Chart")
-        st.pyplot(fig6)
-        st.bar_chart(df2)
-        
         ####################################################
         
         
     else:
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%'")
         count_current_user_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
+        
         count_success_user_log = c.fetchall()[0][0]
         #st.write(count_success_user_log)
         #Creating the dataset
-        keys = ["success","fail","all"]
+        keys = ["Ok","Defect","all"]
         #keys.append(st.session_state.username)
         values = [count_success_user_log,count_current_user_log-count_success_user_log,count_current_user_log]
         #values.append(count_current_user_log)
 
-        fig2 = plt.figure(figsize = (6, 3))
+        fig = plt.figure(figsize = (6, 3))
 
         plt.bar(keys, values)
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
         plt.ylabel("Number of API functions calling")
-        plt.title(st.session_state.username + "'s API Functions Call Bar Chart")
-        st.pyplot(fig2)
+        plt.title(st.session_state.username + "'s Image Detection API Calls Bar Chart")
+        st.pyplot(fig)
         
         ###########################################
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'pass', 'fail'
+        labels = 'Ok', 'Defect'
         sizes = [count_success_user_log, count_current_user_log-count_success_user_log]
         explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
-        fig3, ax1 = plt.subplots()
+        fig1, ax1 = plt.subplots()
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
-        st.pyplot(fig3)
+        ax1.set_title(st.session_state.username + "'s Image Detection API Calls Pie Chart")
+        st.pyplot(fig1)
+        
         
         
         ########################################
         
         
-        c.execute("SELECT ut.username, COUNT(*) FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId GROUP BY ut.userId")   
+        c.execute("SELECT ut.username, COUNT(*) FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE lt.requestURL LIKE '%qualityinspection%' GROUP BY ut.userId")   
         admin_result = c.fetchall()
         admin_keys = []
         admin_values = []
@@ -266,16 +201,16 @@ if(st.session_state.authentication_status == True):
         plt.bar(admin_keys, admin_values)
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
-        plt.ylabel("Number of API functions calling")
-        plt.title("All API Functions Call Bar Chart Record")
+        plt.ylabel("Number of images Dectection")
+        plt.title("Image Dectection API Function Call Bar Chart")
         st.pyplot(fig4)
         
 
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE lt.requestUrl LIKE '%qualityinspection%'")
         count_current_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId" + " WHERE lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId" + " WHERE lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
         count_success_log = c.fetchall()[0][0]
         labels = 'pass', 'fail'
         sizes = [count_success_log, count_current_log-count_success_log]
@@ -285,65 +220,45 @@ if(st.session_state.authentication_status == True):
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax1.set_title("All API functions Pass/Fail Pie Chart")
+        ax1.set_title("All Users Dectection Pass/Fail Pie Chart")
         st.pyplot(fig5)
         
         
         
         
         
-        c.execute("SELECT requestUrl FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId")
-        function_name_1 = "getboundingbox"
-        count_func1 = 0
-        function_name_2 = "fileNameAndClass"
-        count_func2 = 0
-        function_name_3 = "imgSizeRange"
-        count_func3 = 0
-        function_name_4 = "aircraftPositionRange"
-        count_func4 = 0
-        function_name_5 = "aircraftNumandClass"
-        count_func5 = 0
-        function_name_6 = "random"
-        count_func6 = 0
-        function_name_7 = "display/image"
-        count_func7 = 0
+        c.execute("SELECT count(lt.requestUrl),ut.username FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE requestUrl LIKE '%qualityinspection%' GROUP BY ut.username")
+
         
-        #Todo 改名字
-        result = c.fetchall()
+        result = c.fetchall() 
+        #st.write((result)) # ((18, 'cheng'), (2, 'meihu'), (2, 'admin'))
+        api_call_num_list = []
+        user_list = []
+        
         for item in result:
-            if(function_name_1 in item[0]):
-               count_func1 += 1
-            if(function_name_2 in item[0]):
-                count_func2 += 1
-            if(function_name_3 in item[0]):
-                count_func3 += 1
-            if(function_name_4 in item[0]):
-                count_func4 += 1
-            if(function_name_5 in item[0]):
-                count_func5 += 1
-            if(function_name_6 in item[0]):
-                count_func6 += 1
-            elif(function_name_7 in item[0]):
-                count_func7 += 1
+            api_call_num_list.append(item[0])
+            user_list.append(item[1])
+        
         
         df3 = pd.DataFrame({
-            'function': [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7],
-            st.session_state.username: [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
+            'User': user_list,
+            'api calls': api_call_num_list
         })
 
-        df3 = df3.rename(columns={'function':'index'}).set_index('index')
+        df3 = df3.rename(columns={'User':'index'}).set_index('index')
 
-        #st.line_chart(df3)
+        # #st.line_chart(df3)
 
-        label1s = [function_name_1, function_name_2, function_name_3, function_name_4,function_name_5,function_name_6,function_name_7]
-        size1s = [count_func1,count_func2,count_func3,count_func4,count_func5,count_func6,count_func7]
-        explode1 = (0, 0, 0, 0, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+        label1s = user_list
+        size1s = api_call_num_list
+        _length = len(user_list)
+        explode1 = [0] *  len(user_list)
 
         fig6, ax2 = plt.subplots()
         ax2.pie(size1s, explode=explode1, labels=label1s, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        ax2.set_title("All API functions Call Pie Chart")
+        ax2.set_title("User's Image detect Data Analysis")
         st.pyplot(fig6)
 
         st.bar_chart(df3)

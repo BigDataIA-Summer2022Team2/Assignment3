@@ -291,7 +291,7 @@ async def log_requests(request: Request, call_next):
 ############################# API Functions #################################
 
 @app.post("/qualityinspection/")
-async def qualityinspection(file: bytes = File()):
+async def qualityinspection(file: bytes = File(), current_user: User = Depends(get_current_active_user)):
     """
         Cheking the quality by uploading your image file.
         """                      
@@ -301,7 +301,7 @@ async def qualityinspection(file: bytes = File()):
         # content = file.read()
         # for file in files:
         #     count = 1
-        print(file)
+        #print(file)
         response = test_model.qualityinspection(file)
         
 

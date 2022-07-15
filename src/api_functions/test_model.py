@@ -40,4 +40,5 @@ def qualityinspection(file):
     response = {}
     #response["image name"] = filename
     response["status"] = STATUS[x[0][0]]
+    response["probability"] = str(round(prediction[0][0] * 100,3)) + "%"
     return response
