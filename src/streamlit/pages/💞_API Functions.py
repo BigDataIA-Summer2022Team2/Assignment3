@@ -63,7 +63,7 @@ def function1():
             filedata = uploaded_files[i].read()
         
             
-            url = 'http://127.0.0.1:8000/qualityinspection/'
+            url = 'http://127.0.0.1:3000/qualityinspection/'
             response = getFastAPIResponse(url,filename,filedata)
             
             if(response.content[0] == 123): # json style
