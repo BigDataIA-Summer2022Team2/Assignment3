@@ -6,7 +6,7 @@ import os
 from keras.applications.inception_v3 import preprocess_input
 from PIL import Image
 import io
-def qualityinspection(filename, file):
+def qualityinspection(file):
     STATUS = ["Defect", "Ok"]
 
     abs_path = os.path.dirname(os.path.dirname(os.path.dirname((os.path.abspath(__file__)))))
@@ -32,6 +32,6 @@ def qualityinspection(filename, file):
 
     x = (prediction > 0.5).astype("int32")
     response = {}
-    response["image name"] = filename
+    #response["image name"] = filename
     response["status"] = STATUS[x[0][0]]
     return response

@@ -643,3 +643,345 @@ AttributeError: 'bytes' object has no attribute 'filename'
 2022-07-14 20:24:55,168 loglevel=INFO   Waiting for application startup.
 2022-07-14 20:24:55,168 loglevel=INFO   Application startup complete.
 
+2022-07-14 21:58:03,623 loglevel=INFO   Started server process [13912]
+2022-07-14 21:58:03,624 loglevel=INFO   Waiting for application startup.
+2022-07-14 21:58:03,624 loglevel=INFO   Application startup complete.
+2022-07-14 22:00:04,192 loglevel=INFO   rid=CE21U7 request url=http://127.0.0.1:8000/token completed_in=226.21ms status_code=200
+2022-07-14 22:00:12,466 loglevel=INFO   rid=E8M684 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=1.00ms status_code=422
+2022-07-14 22:00:43,107 loglevel=INFO   rid=Y6S7JN request url=http://127.0.0.1:8000/token completed_in=204.19ms status_code=200
+2022-07-14 22:00:51,107 loglevel=INFO   rid=2CPFYD request url=http://127.0.0.1:8000/token completed_in=205.19ms status_code=200
+2022-07-14 22:02:59,850 loglevel=INFO   Started server process [10420]
+2022-07-14 22:02:59,851 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:02:59,852 loglevel=INFO   Application startup complete.
+2022-07-14 22:03:07,427 loglevel=INFO   rid=ALYLVL request url=http://127.0.0.1:8000/token completed_in=225.20ms status_code=200
+2022-07-14 22:03:15,898 loglevel=INFO   rid=7G6SHT request url=http://127.0.0.1:8000/token completed_in=205.19ms status_code=200
+2022-07-14 22:03:20,447 loglevel=INFO   rid=4OBRK4 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=422
+2022-07-14 22:03:57,989 loglevel=INFO   Started server process [7528]
+2022-07-14 22:03:57,990 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:03:57,990 loglevel=INFO   Application startup complete.
+2022-07-14 22:04:27,221 loglevel=INFO   Started server process [1588]
+2022-07-14 22:04:27,222 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:04:27,222 loglevel=INFO   Application startup complete.
+2022-07-14 22:04:32,942 loglevel=INFO   Started server process [11180]
+2022-07-14 22:04:32,943 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:04:32,943 loglevel=INFO   Application startup complete.
+2022-07-14 22:04:36,292 loglevel=INFO   Started server process [7300]
+2022-07-14 22:04:36,292 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:04:36,293 loglevel=INFO   Application startup complete.
+2022-07-14 22:04:43,334 loglevel=INFO   rid=HL1TG6 request url=http://127.0.0.1:8000/token completed_in=226.21ms status_code=200
+2022-07-14 22:04:50,586 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 304, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 24, in qualityinspection
+    img = Image.open(io.BytesIO(file))
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\PIL\Image.py", line 3123, in open
+    raise UnidentifiedImageError(
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x0000027F6015DA80>
+2022-07-14 22:06:02,443 loglevel=INFO   Started server process [6588]
+2022-07-14 22:06:02,444 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:06:02,445 loglevel=INFO   Application startup complete.
+2022-07-14 22:06:13,811 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 24, in qualityinspection
+    img = Image.open(io.BytesIO(file))
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\PIL\Image.py", line 3123, in open
+    raise UnidentifiedImageError(
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x0000018D70948860>
+2022-07-14 22:06:18,129 loglevel=INFO   rid=8ZKJI0 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 22:06:18,250 loglevel=INFO   rid=D1DMLR request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 22:06:27,489 loglevel=INFO   rid=3TC372 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2983.71ms status_code=200
+2022-07-14 22:07:31,239 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 24, in qualityinspection
+    img = Image.open(io.BytesIO(file))
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\PIL\Image.py", line 3123, in open
+    raise UnidentifiedImageError(
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x0000018D70232980>
+2022-07-14 22:17:06,721 loglevel=INFO   Started server process [15992]
+2022-07-14 22:17:06,722 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:17:06,722 loglevel=INFO   Application startup complete.
+2022-07-14 22:19:31,543 loglevel=INFO   rid=CDRJF6 request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 22:19:31,664 loglevel=INFO   rid=QK3P03 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 22:19:50,046 loglevel=INFO   Started server process [15704]
+2022-07-14 22:19:50,047 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:19:50,047 loglevel=INFO   Application startup complete.
+2022-07-14 22:19:51,805 loglevel=INFO   rid=KUH7FF request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-14 22:19:51,927 loglevel=INFO   rid=RRKD63 request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
+2022-07-14 22:20:00,584 loglevel=INFO   rid=NGJQB7 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2966.87ms status_code=200
+2022-07-14 22:29:48,583 loglevel=INFO   Started server process [6468]
+2022-07-14 22:29:48,584 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:29:48,584 loglevel=INFO   Application startup complete.
+2022-07-14 22:33:08,755 loglevel=INFO   Started server process [9792]
+2022-07-14 22:33:08,756 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:33:08,756 loglevel=INFO   Application startup complete.
+2022-07-14 22:33:09,469 loglevel=INFO   rid=VTG1MS request url=http://127.0.0.1:8000/qualityinspection/ completed_in=1.00ms status_code=400
+2022-07-14 22:33:09,517 loglevel=INFO   rid=5FL07W request url=http://127.0.0.1:8000/qualityinspection/ completed_in=1.00ms status_code=400
+2022-07-14 22:33:13,541 loglevel=INFO   rid=SLZ3W3 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:33:13,545 loglevel=INFO   rid=V35V34 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:33:19,354 loglevel=INFO   rid=BQOXAJ request url=http://127.0.0.1:8000/qualityinspection/ completed_in=1.00ms status_code=400
+2022-07-14 22:33:48,036 loglevel=INFO   Started server process [16628]
+2022-07-14 22:33:48,036 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:33:48,037 loglevel=INFO   Application startup complete.
+2022-07-14 22:33:51,170 loglevel=INFO   rid=D21KUY request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:33:56,550 loglevel=INFO   rid=B6NV16 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=1.00ms status_code=400
+2022-07-14 22:34:44,549 loglevel=INFO   Started server process [8208]
+2022-07-14 22:34:44,550 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:34:44,550 loglevel=INFO   Application startup complete.
+2022-07-14 22:34:46,696 loglevel=INFO   rid=YW02XU request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:34:48,800 loglevel=INFO   rid=C0J5QH request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:34:52,020 loglevel=INFO   rid=22UVVI request url=http://127.0.0.1:8000/qualityinspection/ completed_in=0.00ms status_code=400
+2022-07-14 22:38:59,633 loglevel=INFO   Started server process [6916]
+2022-07-14 22:38:59,634 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:38:59,634 loglevel=INFO   Application startup complete.
+2022-07-14 22:39:54,089 loglevel=INFO   Started server process [17328]
+2022-07-14 22:39:54,090 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:39:54,091 loglevel=INFO   Application startup complete.
+2022-07-14 22:40:39,964 loglevel=INFO   Started server process [9072]
+2022-07-14 22:40:39,964 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:40:39,965 loglevel=INFO   Application startup complete.
+2022-07-14 22:41:39,063 loglevel=INFO   Started server process [16500]
+2022-07-14 22:41:39,064 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:41:39,065 loglevel=INFO   Application startup complete.
+2022-07-14 22:45:11,203 loglevel=INFO   rid=UZGNHV request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2997.35ms status_code=200
+2022-07-14 22:46:49,738 loglevel=INFO   Started server process [284]
+2022-07-14 22:46:49,739 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:46:49,739 loglevel=INFO   Application startup complete.
+2022-07-14 22:48:05,704 loglevel=INFO   Started server process [17276]
+2022-07-14 22:48:05,704 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:48:05,705 loglevel=INFO   Application startup complete.
+2022-07-14 22:50:13,160 loglevel=INFO   Started server process [3688]
+2022-07-14 22:50:13,161 loglevel=INFO   Waiting for application startup.
+2022-07-14 22:50:13,161 loglevel=INFO   Application startup complete.
+2022-07-14 22:50:20,855 loglevel=ERROR  Exception in ASGI application
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\anyio\streams\memory.py", line 87, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 245, in log_requests
+    response = await call_next(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 46, in call_next
+    raise app_exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\middleware\base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 93, in __call__
+    raise exc
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\starlette\routing.py", line 65, in app
+    response = await func(request)
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\fastapi\routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "H:\Documents\GitHub\Assignment3\src\.\main.py", line 305, in qualityinspection
+    response = test_model.qualityinspection(file)
+  File "H:\Documents\GitHub\Assignment3\src\api_functions\test_model.py", line 24, in qualityinspection
+    img = Image.open(io.BytesIO(file))
+  File "H:\Documents\GitHub\Assignment3\.venv\lib\site-packages\PIL\Image.py", line 3123, in open
+    raise UnidentifiedImageError(
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x000002216FF7E930>
+2022-07-14 23:05:38,214 loglevel=INFO   Started server process [8176]
+2022-07-14 23:05:38,215 loglevel=INFO   Waiting for application startup.
+2022-07-14 23:05:38,215 loglevel=INFO   Application startup complete.
+2022-07-14 23:05:45,739 loglevel=INFO   rid=C1RINI request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2975.89ms status_code=200
+2022-07-14 23:08:18,934 loglevel=INFO   Started server process [11448]
+2022-07-14 23:08:18,935 loglevel=INFO   Waiting for application startup.
+2022-07-14 23:08:18,936 loglevel=INFO   Application startup complete.
+2022-07-14 23:08:26,575 loglevel=INFO   rid=4MY18T request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2926.66ms status_code=200
+2022-07-14 23:10:36,752 loglevel=INFO   Started server process [11508]
+2022-07-14 23:10:36,752 loglevel=INFO   Waiting for application startup.
+2022-07-14 23:10:36,753 loglevel=INFO   Application startup complete.
+2022-07-14 23:10:47,948 loglevel=INFO   rid=CUFBV7 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2917.14ms status_code=200
+2022-07-14 23:12:30,177 loglevel=INFO   Started server process [8460]
+2022-07-14 23:12:30,177 loglevel=INFO   Waiting for application startup.
+2022-07-14 23:12:30,178 loglevel=INFO   Application startup complete.
+2022-07-14 23:12:37,535 loglevel=INFO   rid=KP1DL0 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=2946.63ms status_code=200
+2022-07-14 23:13:16,555 loglevel=INFO   Started server process [3820]
+2022-07-14 23:13:16,555 loglevel=INFO   Waiting for application startup.
+2022-07-14 23:13:16,556 loglevel=INFO   Application startup complete.
+2022-07-14 23:13:17,100 loglevel=INFO   Shutting down
+2022-07-14 23:13:17,210 loglevel=INFO   Waiting for application shutdown.
+2022-07-14 23:13:17,210 loglevel=INFO   Application shutdown complete.
+2022-07-14 23:13:17,211 loglevel=INFO   Finished server process [3820]
