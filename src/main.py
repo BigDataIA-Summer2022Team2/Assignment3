@@ -291,26 +291,25 @@ async def log_requests(request: Request, call_next):
 ############################# API Functions #################################
 
 @app.post("/qualityinspection/")
-async def qualityinspection(filename:str, files: List[bytes] = File()):
+async def qualityinspection(file: bytes = File()):
     """
         Cheking the quality by uploading your image file.
         """                      
     if not file:
         return {"message": "No upload file sent"}
     else:
-        response = {}
-
         # content = file.read()
         # for file in files:
         #     count = 1
-        #     response[count] = test_model.qualityinspection(file)
-        #     count = count + 1
+        print(file)
+        response = test_model.qualityinspection(file)
+        
 
     return response
 
-@app.post("/files/")
-async def create_files(files: List[bytes] = File()):
-    return {"file_sizes": [len(file) for file in files]}
+# @app.post("/files/")
+# async def create_files(files: List[bytes] = File()):
+#     return {"file_sizes": [len(file) for file in files]}
 # display random image and its info
 # @app.get("/display/image/")
 # async def displayImageInHTML(imgName:str,current_user: User = Depends(get_current_active_user)):

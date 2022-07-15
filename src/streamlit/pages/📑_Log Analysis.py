@@ -13,15 +13,6 @@ import os
 
 #st.session_state
 
-def modify_start_date_to_default():
-    if(st.session_state.log_start > st.session_state.log_end):
-        st.session_state.log_start = datetime.date(2022, 6, 29)    
-        st.error("Start date should be earlier than or equal to end date")
-    
-def modify_end_date_to_default():
-    if(st.session_state.log_end < st.session_state.log_start):
-        st.session_state.log_end = datetime.date(2022, 6, 29)    
-        st.error("End date should be later than or rqual to start date")
 
 with open('./streamlit_config.yaml') as file:
         config = yaml.safe_load(file)
@@ -60,10 +51,11 @@ with st.sidebar:
         options = st.multiselect(
             'What log info you want to get?',
             ['logId','requestUrl','userId', 'response', 'logTime', 'code_', 'username','level_','processTime'],
-            ['logId','username','requestUrl','code_','level_'],key="log_output_selection")
+            ['logId','username','requestUrl','code_','level_','response'],key="log_output_selection")
 
         num_logs = st.number_input(label="Choose number of logs you want to see", min_value=0, max_value=40, step=5)
         isNumLogsButtonClick = st.button("OK")
+        
 if(st.session_state.authentication_status == None or st.session_state.authentication_status == False):
     st.header("Please go to ***Home Page and login***!")
     st.session_state.token = ''
@@ -84,7 +76,7 @@ if(st.session_state.authentication_status == True):
                     else:
                         sql = sql + "lt." + str(item) + ", "
                 
-            sql = sql + " FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE ut.username = '" + st.session_state.username + "' LIMIT " + str(num_logs)
+            sql = sql + " FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE ut.username = '" + st.session_state.username + "' AND lt.requestURL LIKE '%qualityinspection%' LIMIT " + str(num_logs)
             #st.write(sql)
             c.execute(sql)
             result = c.fetchall()
@@ -117,14 +109,15 @@ if(st.session_state.authentication_status == True):
     if(st.session_state["username"] != "cheng" and st.session_state["username"] != "meihu" and st.session_state["username"] != "root" and st.session_state["username"] != "admin"):
         
     
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%'")
         count_current_user_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
+        
         count_success_user_log = c.fetchall()[0][0]
         #st.write(count_success_user_log)
         #Creating the dataset
-        keys = ["success","fail","all"]
+        keys = ["Ok","Defect","all"]
         #keys.append(st.session_state.username)
         values = [count_success_user_log,count_current_user_log-count_success_user_log,count_current_user_log]
         #values.append(count_current_user_log)
@@ -140,7 +133,7 @@ if(st.session_state.authentication_status == True):
         
         ###########################################
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'pass', 'fail'
+        labels = 'Ok', 'Defect'
         sizes = [count_success_user_log, count_current_user_log-count_success_user_log]
         explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
@@ -215,45 +208,47 @@ if(st.session_state.authentication_status == True):
         
         
     else:
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "'")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%'")
         count_current_user_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE ut.username ='" + st.session_state.username + "' AND lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
+        
         count_success_user_log = c.fetchall()[0][0]
         #st.write(count_success_user_log)
         #Creating the dataset
-        keys = ["success","fail","all"]
+        keys = ["Ok","Defect","all"]
         #keys.append(st.session_state.username)
         values = [count_success_user_log,count_current_user_log-count_success_user_log,count_current_user_log]
         #values.append(count_current_user_log)
 
-        fig2 = plt.figure(figsize = (6, 3))
+        fig = plt.figure(figsize = (6, 3))
 
         plt.bar(keys, values)
         #plt.xlabel("Users")
         #plt.xlabel(st.session_state.username)
         plt.ylabel("Number of API functions calling")
         plt.title(st.session_state.username + "'s API Functions Call Bar Chart")
-        st.pyplot(fig2)
+        st.pyplot(fig)
         
         ###########################################
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'pass', 'fail'
+        labels = 'Ok', 'Defect'
         sizes = [count_success_user_log, count_current_user_log-count_success_user_log]
         explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
-        fig3, ax1 = plt.subplots()
+        fig1, ax1 = plt.subplots()
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         ax1.set_title(st.session_state.username + "'s API functions Call Pie Chart")
-        st.pyplot(fig3)
+        st.pyplot(fig1)
+        
         
         
         ########################################
         
         
-        c.execute("SELECT ut.username, COUNT(*) FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId GROUP BY ut.userId")   
+        c.execute("SELECT ut.username, COUNT(*) FROM log_table lt INNER JOIN user_table ut ON lt.userId = ut.userId WHERE lt.requestURL LIKE '%qualityinspection%' GROUP BY ut.userId")   
         admin_result = c.fetchall()
         admin_keys = []
         admin_values = []
@@ -272,10 +267,10 @@ if(st.session_state.authentication_status == True):
         
 
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId WHERE lt.requestUrl LIKE '%qualityinspection%'")
         count_current_log = c.fetchall()[0][0]
         
-        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId" + " WHERE lt.code_= 200")
+        c.execute("SELECT COUNT(*) FROM log_table lt INNER JOIN user_table ut on lt.userId = ut.userId" + " WHERE lt.requestUrl LIKE '%qualityinspection%' AND lt.response LIKE '%Ok%'")
         count_success_log = c.fetchall()[0][0]
         labels = 'pass', 'fail'
         sizes = [count_success_log, count_current_log-count_success_log]
