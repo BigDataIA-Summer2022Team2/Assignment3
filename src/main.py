@@ -19,10 +19,10 @@ from starlette.concurrency import iterate_in_threadpool
 import os
 import yaml
 from fastapi.responses import Response
-
+from typing import List
 from datetime import datetime, timedelta
 from typing import Union
-from fastapi import Depends, FastAPI, HTTPException, status, UploadFile
+from fastapi import Depends, FastAPI, HTTPException, status, UploadFile, File
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -290,22 +290,27 @@ async def log_requests(request: Request, call_next):
 
 ############################# API Functions #################################
 
-# fileName , class input and return response
-@app.post("/api/get/qualityinspection/")
-async def qualityinspection(file: Union[UploadFile, None] = None, current_user: User = Depends(get_current_active_user)):
-        """
+@app.post("/qualityinspection/")
+async def qualityinspection(filename:str, files: List[bytes] = File()):
+    """
         Cheking the quality by uploading your image file.
         """                      
-        if not file:
-            return {"message": "No upload file sent"}
-        else:
-            response = test_model.qualityinspection(file)
-        
-        return response
+    if not file:
+        return {"message": "No upload file sent"}
+    else:
+        response = {}
 
+        # content = file.read()
+        # for file in files:
+        #     count = 1
+        #     response[count] = test_model.qualityinspection(file)
+        #     count = count + 1
 
+    return response
 
-
+@app.post("/files/")
+async def create_files(files: List[bytes] = File()):
+    return {"file_sizes": [len(file) for file in files]}
 # display random image and its info
 # @app.get("/display/image/")
 # async def displayImageInHTML(imgName:str,current_user: User = Depends(get_current_active_user)):
