@@ -2131,3 +2131,12 @@ OSError: No file or directory found at H:\Documents\GitHub\Assignment3\model.h5
 2022-07-15 18:43:34,578 loglevel=INFO   rid=788RXX request url=http://127.0.0.1:8000/openapi.json completed_in=4.00ms status_code=200
 2022-07-15 18:43:43,951 loglevel=INFO   rid=W12LO9 request url=http://127.0.0.1:8000/qualityinspection/ completed_in=5739.41ms status_code=200
 2022-07-15 18:43:48,910 loglevel=INFO   Shutting down
+2022-07-15 19:38:12,528 loglevel=INFO   Started server process [32008]
+2022-07-15 19:38:12,529 loglevel=INFO   Waiting for application startup.
+2022-07-15 19:38:12,530 loglevel=INFO   Application startup complete.
+2022-07-15 19:38:15,448 loglevel=INFO   rid=PC8IG9 request url=http://127.0.0.1:8000/ completed_in=1.00ms status_code=200
+2022-07-15 19:38:18,545 loglevel=INFO   rid=CI71AG request url=http://127.0.0.1:8000/ completed_in=0.00ms status_code=200
+2022-07-15 19:38:19,537 loglevel=INFO   rid=PL6ZBF request url=http://127.0.0.1:8000/ completed_in=0.99ms status_code=200
+2022-07-15 19:38:38,296 loglevel=INFO   rid=234XLP request url=http://127.0.0.1:8000/docs completed_in=0.00ms status_code=200
+2022-07-15 19:38:38,494 loglevel=INFO   rid=B9L5T8 request url=http://127.0.0.1:8000/openapi.json completed_in=7.53ms status_code=200
+2022-07-15 19:39:50,031 loglevel=INFO   Shutting down

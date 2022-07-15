@@ -7,7 +7,7 @@ from keras.applications.inception_v3 import preprocess_input
 from PIL import Image
 import io
 import pickle
-import joblib
+
 #import tflearn
 def qualityinspection(file):
     STATUS = ["Defect", "Ok"]
