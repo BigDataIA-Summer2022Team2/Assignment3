@@ -16,14 +16,13 @@ import logging
 import logging.config
 from requests import request
 from starlette.concurrency import iterate_in_threadpool
-import json
 import os
 import yaml
 from fastapi.responses import Response
 
 from datetime import datetime, timedelta
 from typing import Union
-from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi import Depends, FastAPI, HTTPException, status, UploadFile
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -33,16 +32,13 @@ from pydantic import BaseModel
 
 from datetime import datetime
 from pydantic import BaseModel
-
-
-from fastapi_log.log_request import LoggingRoute
-from fastapi_log import dashboard
 import pymysql
 path = str(Path(Path(__file__).parent.absolute()))
 sys.path.insert(0, path)
 
 # import functions
-from api_functions import returnHomePage
+from api_functions import returnHomePage, test_model
+
 
 
 
@@ -77,9 +73,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30 # 30 mins expire
 
 
 abs_path = os.path.dirname((os.path.abspath(__file__)))
-print(abs_path)
 yaml_path = abs_path + "/mysql.yaml"
-print(os.path.exists(yaml_path))
+
 
 with open(yaml_path, 'r') as file:
     config = yaml.safe_load(file)
@@ -296,29 +291,28 @@ async def log_requests(request: Request, call_next):
 ############################# API Functions #################################
 
 # fileName , class input and return response
-@app.get("/api/get/fileNameAndClass/")
-async def aircraftClassAndFileNameFilterRequest(className:str=None,
-                              filename:str=None,
-                              current_user: User = Depends(get_current_active_user)):
+@app.post("/api/get/qualityinspection/")
+async def qualityinspection(file: Union[UploadFile, None] = None, current_user: User = Depends(get_current_active_user)):
         """
-        Type the class name and file name you want to search.
+        Cheking the quality by uploading your image file.
         """                      
-        idem = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
-        width=height=xmin=ymin=xmax=ymax = 0
-        response = getS3BucketBody.getS3BucketBodyInfo(filename,width,height,className,xmin,ymin,xmax,ymax) # get return response
-        if response =={"error": "No data Found"}:
-            raise HTTPException(status_code=404, detail="Item not found")
+        if not file:
+            return {"message": "No upload file sent"}
+        else:
+            response = test_model.qualityinspection(file)
         
-        return  response
+        return response
+
+
 
 
 # display random image and its info
-@app.get("/display/image/")
-async def displayImageInHTML(imgName:str,current_user: User = Depends(get_current_active_user)):
-    image = displayImage.displayImageInHTML(imgName)
-    if image == {"error:":"No data Found!"}:
-        raise HTTPException(status_code=404, detail="Item not found")
-    return Response(content=image, media_type="image/jpeg")
+# @app.get("/display/image/")
+# async def displayImageInHTML(imgName:str,current_user: User = Depends(get_current_active_user)):
+#     image = displayImage.displayImageInHTML(imgName)
+#     if image == {"error:":"No data Found!"}:
+#         raise HTTPException(status_code=404, detail="Item not found")
+#     return Response(content=image, media_type="image/jpeg")
 
 
 # @Description: input basemodel
