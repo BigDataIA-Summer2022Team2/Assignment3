@@ -63,15 +63,15 @@ def function1():
         
         
         header = {"Content-Type" : "multipart/form-data"}
-        data = {'key':'value'}
+        data = {}
         url = 'http://127.0.0.1:8000/qualityinspection/'
-        data['file']= (filename,filedata)
+        data['image']= filedata
 
-        encode_data = encode_multipart_formdata(data)
-        data = encode_data[0]
-        header['Content-Type'] = encode_data[1]
+        # encode_data = encode_multipart_formdata(data)
+        # data = encode_data[0]
+        # header['Content-Type'] = encode_data[1]
         response = requests.post(url=url, headers=header, data=data)
-
+        
     
     
     # url = 'http://127.0.0.1:8000/qualityinspection/'
