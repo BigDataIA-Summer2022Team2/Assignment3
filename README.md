@@ -56,7 +56,7 @@
    Path: /src/log/
    ```
    
-   - no log file inside because I used `.gitignore` to ignore it but you can generate one if you want
+   - no log file inside because I used `.gitignore` to ignore it but it will auto-generate when you run FastAPI.
 
 
 5. requirements.txt: All Python modules we need in this assignment
