@@ -26,7 +26,7 @@
 - Then you need to config your localhost db config and put it into the path we set up.
 - Also you need to config your streamlit config
 
-## 3. What is in ths repo?
+## 3. What is in this repo?
 1. api functions
    ```markdown
    Path: Assignment3/src/api_functions/
