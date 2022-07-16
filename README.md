@@ -1,77 +1,70 @@
 # DAMG 7245 Big-Data-Systems-Intelligence-Analytics-Labs-Summer-2022
 
+> Assignment 3 - Transfer Learning
 > Team 2
 > 
 > Cheng Wang NUID: 001280107
 > 
 > Meihu Qin NUID: 002190486
 
-<!-- Todo: Change this README file for Assignemnt 2 -->
 
 ## 1. Intro
 
-- Assignment 3 is a very easy way to understand what a real-life python project looks like
-- create
+- We build a Transfer-Learning project in Assignment 3
+- [Dataset](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)
+- Model: `Insepection_v3`
 
 ## 2. Setup
 
-- If S3 credential is filaed, you can create your own AWS S3 bucket and store all required info into `/assignment_1/credentials/` json file
-- Under Assignment 1 folder, you will see a `requirements.txt` file, it contains all Python packages that we installed on our machine.  Use fllowing commands in your terminal to install all required packages
+- It is different from previous two assignments, we don't need to use `AWS S3 credentials`, we train our model on our machine and deploy it online
+- There are ***three things*** needs to be done before you test our assignment!
   ```python
-  cd /assignment_1/
+  cd Assignment3/
   pip install requirements.txt
   ```
+- Then you need to config your localhost db config and put it into the path we set up.
+- Also you need to config your streamlit config
 
 ## 3. What is in ths repo?
-
-1. pandas profling
+1. api functions
    ```markdown
-   Path: /assignment_1/notebooks/pandas_profiling
+   Path: Assignment3/src/api_functions/
    ```
-2. great expectations
+   
+2. FastAPI: **main.py**
+  - default port: `127.0.0.1:8000`
    ```markdown
-   Path: /assignment_1/great_expectations
-   ```
-3. pillow
-   ```markdown
-   Path: /assignment_1/src/metadata.py
-   ```
-4. model card
-   ```markdown
-   Path: /assignment_1/notebooks/model_card/
-   ```
-5. AWS S3 bucket connector
-   ```markdown
-   Path: /assignment_1/notebooks/AWS_S3/
-   ```
-6. api functions
-   ```markdown
-   Path: /assignment_1/api_functions/
-   ```
-7. main.py
-   ```markdown
-   Path: /assignment_1/src/
+   Path: /src/
    <!--start FastAPI unicorn server -->
-   uvicorn main:app --reload 
+   uvicorn main:app --reload  
    ```
-8. index.html/result.html
+
+3. Streamlit: **Home.py**
+  - default port: `127.0.0.1:8501`
+  
+  ```markdown
+   Path: /src/strreamlit/Home.py
+   <!--start Streamlit server -->
+   streamlit run Home.py 
+   ```
+  
+  - If you didn't create your own `streamlit config yaml file`, you will not login into our streamlit app successfully!
+  - Due to technicial issue, we set our username and password are the same for ask token from FastAPI in our Home.page, you can change it if you want.
+
+4. log
    ```markdown
-   Path: /assignment_1/src/
+   Path: /src/log/
    ```
-9. log
-   ```markdown
-   Path: /assignment_1/logs/
-   ```
+   
    - no log file inside because I used `.gitignore` to ignore it but you can generate one if you want
-10. pytest
-    ```markdown
-    Path: /assignment_1/
-    ```
 
-- pytest confguration py file
-- pytest data test py file
 
-11. requirements.txt
+5. requirements.txt: All Python modules we need in this assignment
+  - We highly recommend to use virtual evvironment
+  - `python -m venv .venv`
+  - Create a `.gitignore` file and add `.venv/*` into it
+  - open script file which is inside the .`venv` folder and run following command
+  - then you will get a nice and clean programming environment
     ```markdown
     Path: /assignment_1/
     
@@ -86,73 +79,18 @@
 > 
 > click `docs` button and you will jump to API documentation
 
-- We create some simple api functions to test
-- People who use our api could input some values and get some correct result to see
+### JWT Auth
+- We create auth which needs user to login
+- You can create your own user and hashed password in your local database
+- Then our function will auto-read these info and check whether you are correct user or not
+- If you didn't login and test out API function(s), you will get response **401 : Not authenticated**
 
-1. infoFilter
-   - image filname
-   - image width
-   - image height
-   - image aircraft class name
-   - aircraft position in this image
-     - xmin
-     - ymin
-     - xmax
-     - ymax
-   - retuen all correct json responses
-2. aircraftClassAndFilenameRequest
-   - image aircraft class name
-   - image filname
-   - retuen all correct json responses
-3. imgSzieRangeRequest
-   - image width
-   - image height
-   - retuen all correct json responses
-4. aircraftPositionRequest
-   - aircraft position in this image
-   - xmin
-   - ymin
-   - xmax
-   - ymax
+### API Qualityinspection
 
-- retuen all satisfied responses
+- We create simple api function to test our trained model
+- People who use our api could input one image file and get response back which includes ***probability*** and ***status***
 
-5. getAllImgInfo
-   - no input value
-   - retuen all images info
-6. numAndClassFiteredInfoRequest
-   - get selected number aircrafts in one image
-   - just equal to input number
-   - ignore lager number of aircrafts
-   - option: aircraft class name
-     - e.g. 4,"F16"
-     - 1 image contains 4 F16 aircrafts
-7. getNumRandomImage
-   - input num and return num images
 
-8. getPandasCsvOutputHtmlPage
-   - no input
-   - it is a html page to show our pandas profiling image info output
-
-9. getPandasImageOutputHtmlPage
-   - no input
-   - a html page to show our pandas profling csv info output
-
-10. displayImageInHTML
-    - no input
-    - a html page to show 5 random images
-
-11. getModelCardHtmlOutput
-    - no input
-    - a html page to show model card html output
-
-## 5. Html output display
-
-- `http://127.0.0.1/8000/pandas/html/csv` csv info pandas profiling html
-- `http://127.0.0.1/8000/pandas/html/image` Image info pandas profiling html
-- `http://127.0.0.1/8000/modelcard/html/` model card nfo pandas profiling html
-- `http://127.0.0.1/8000/display/image` random display 5 images on web page
-
-## 6. Attestation 
-- WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
-- Contribution: Cheng Wang: 50% Meihu Qin: 50%
+## 5. Attestation 
+- ***WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK***
+- ***Contribution: Cheng Wang: 50% Meihu Qin: 50%***
