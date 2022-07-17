@@ -13,7 +13,7 @@ def qualityinspection(file):
     STATUS = ["Defect", "Ok"]
     #model = joblib.load('./model.pkl')
     abs_path = os.path.dirname(os.path.dirname(os.path.dirname((os.path.abspath(__file__)))))
-    model_path = abs_path+"\\trained_model.h5"
+    model_path = abs_path+"/trained_model.h5"
     # with open('model_pkl', 'rb') as file:  
     #     model = pickle.load(file)
     #model = pickle.load(open(model_path, 'rb'))
