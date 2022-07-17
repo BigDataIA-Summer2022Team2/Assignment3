@@ -221,7 +221,7 @@ if(st.session_state.authentication_status == True):
                 shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         ax1.set_title("All Users Dectection Pass/Fail Pie Chart")
-        st.pyplot(fig5)
+        
         
         
         
@@ -259,6 +259,7 @@ if(st.session_state.authentication_status == True):
                 shadow=True, startangle=90)
         ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         ax2.set_title("User's Image detect Data Analysis")
+        
         st.pyplot(fig6)
-
-        st.bar_chart(df3)
+        st.pyplot(fig5)
+        #st.bar_chart(df3)

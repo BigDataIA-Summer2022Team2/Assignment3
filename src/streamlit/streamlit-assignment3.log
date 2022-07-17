@@ -1,0 +1,364 @@
+nohup: ignoring input
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://204.15.72.120:8502
+  External URL: http://204.15.72.120:8502
+
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:28:59.191 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 180, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:28:59.763 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 180, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:32:10.375 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 141, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:32:11.128 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 141, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:33:01.196 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 141, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py:3050: RuntimeWarning: invalid value encountered in divide
+  x = x / sx
+2022-07-16 01:33:01.750 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "pages/📑_Log Analysis.py", line 141, in <module>
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py", line 1412, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_axes.py", line 3092, in pie
+    w = mpatches.Wedge((x, y), radius, 360. * min(theta1, theta2),
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1164, in __init__
+    self._recompute_path()
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/patches.py", line 1176, in _recompute_path
+    arc = Path.arc(theta1, theta2)
+  File "/usr/local/lib/python3.8/dist-packages/matplotlib/path.py", line 947, in arc
+    n = int(2 ** np.ceil((eta2 - eta1) / halfpi))
+ValueError: cannot convert float NaN to integer
+2022-07-16 17:44:51.163 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:44:51.844 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:44:52.088 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:44:57.852 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:44:58.518 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:45:10.066 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:45:10.640 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:45:10.827 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:50:02.181 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:51:25.628 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 17:51:26.309 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 972, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/streamlit/scriptrunner/script_runner.py", line 554, in _run_script
+    exec(code, module.__dict__)
+  File "Home.py", line 98, in <module>
+    token = res.json()["access_token"]
+  File "/usr/local/lib/python3.8/dist-packages/requests/models.py", line 976, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-16 18:06:21.773 Received event for non-watched file: /root/lemon/Assignment3/src/streamlit/pages/💞_API Functions.py
