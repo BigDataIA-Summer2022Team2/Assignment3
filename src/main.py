@@ -1,24 +1,18 @@
-from pickle import GLOBAL
-import random
-import string
 from fastapi import FastAPI, Query, Path, Request,HTTPException, Depends
 from typing import Union
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import OAuth2PasswordBearer
-import time
 from numpy import equal
 from pydantic import BaseModel
 from pathlib import Path
 import sys
-import logging
 import logging.config
 from requests import request
 from starlette.concurrency import iterate_in_threadpool
 import os
 import yaml
 from fastapi.responses import Response
-from typing import List
 from datetime import datetime, timedelta
 from typing import Union
 from fastapi import Depends, FastAPI, HTTPException, status, UploadFile, File
@@ -217,10 +211,10 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 ############################# Logging #################################
 
 # setup loggers
-logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
+#logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
 
 # get root logger
-logger = logging.getLogger(__name__)  # the __name__ resolve to "main" since we are at the root of the project. 
+#logger = logging.getLogger(__name__)  # the __name__ resolve to "main" since we are at the root of the project. 
                                       # This will get the root logger since no logger in the configuration has this name.
 
 #app.router.route_class = LoggingRoute
@@ -236,57 +230,6 @@ async def home():
     response = returnHomePage.getHomePage()
     return response
 
-@app.middleware("http")
-async def log_requests(request: Request, call_next):
-    idem = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
-    params = request.query_params
-    start_time = time.time()
-    logTime = datetime.now()
-    response = await call_next(request)
-    process_time = (time.time() - start_time) * 1000
-    formatted_process_time = '{0:.2f}'.format(process_time)
-    logger.info(f"rid={idem} request url={request.url} completed_in={formatted_process_time}ms status_code={response.status_code}")
-    response_body = [section async for section in response.body_iterator]
-    response.body_iterator = iterate_in_threadpool(iter(response_body))
-    level=logging.getLevelName(logger.getEffectiveLevel())
-    statuscode = response.status_code
-    try:    
-        message = response_body[0].decode("utf-8")
-        if response_body[0].decode("utf-8") == '{"detail":"Item not found"}':
-            logger.error("No data Found!")
-            level = 'ERROR'
-            message = ("No data Found!")
-            statuscode =status.HTTP_404_NOT_FOUND
-        if response_body[0].decode("utf-8") == '{"detail":"Given number should be less than 10 and greater than 0!"}':
-            logger.error("Given number should be less than 10 and greater than 0!")
-            level = 'ERROR'
-            message = ("Given number should be less than 10 and greater than 0!")
-            statuscode =status.HTTP_400_BAD_REQUEST
-        if response_body[0].decode("utf-8") == '{"detail":"Not authenticated"}':
-            statuscode =status.HTTP_401_UNAUTHORIZED
-            logger.error("Not authenticated.")
-            level = 'ERROR'
-            message = ("Error: Unauthorized.")
-    except:
-        message = "Results Found!"
-    
-    
-    global username
-    db = con.cursor()
-
-    user_status = db.execute('SELECT userId from user_table where username = %s', (username))
-    if user_status != 0:
-        if "token" in str(request.url) or "openapi" in str(request.url): # to ignore get token response or openapi docs response
-            return response
-        else:
-            sqlresult = db.fetchall()
-            userId = list(sqlresult)[0][0]
-            db.execute('INSERT INTO log_table(logId,userId,level_,requestUrl,code_,response,logTime,processTime) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)',(idem,userId,level,request.url,statuscode,message,logTime,formatted_process_time))
-            con.commit()
-            username = ""
-    return response
-
-############################# Logging #################################
 
 ############################# API Functions #################################
 

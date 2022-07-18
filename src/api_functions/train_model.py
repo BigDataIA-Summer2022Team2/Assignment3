@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
-import pickle
-import keras,os,json
+import keras,os
 from keras.layers import Conv2D, MaxPool2D,Dropout,Flatten,Dense
 from keras.preprocessing import image 
 from keras.models import Sequential
