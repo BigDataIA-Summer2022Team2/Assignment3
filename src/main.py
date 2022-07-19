@@ -74,30 +74,30 @@ else:
     list_hashed_res = stauth.Hasher(list_passwd).generate()
     result[username]['hashed_password'] = list_hashed_res[0]
     
-    print("username:\t", argv[1])
-    print("plain password:\t", argv[2])
-    print("hashed password:\t", list_hashed_res[0])
+    print("username:\t\t\t", argv[1])
+    print("plain password:\t\t\t", argv[2])
+    print("hashed password:\t\t", list_hashed_res[0])
 
     if len(argv) == 3:
         result[username]['full_name'] = argv[1]
         result[username]['email'] = ""
-        print("full name:\t", argv[1])
-        print("email:\t", "")
+        print("full name:\t\t\t", argv[1])
+        print("email:\t\t\t\t", "")
 
     elif(len(argv) == 4):
         result[username]['full_name'] = argv[3]
         result[username]['email'] = ""
-        print("full name:\t", argv[3])
-        print("email:\t", "")
+        print("full name:\t\t\t", argv[3])
+        print("email:\t\t\t\t", "")
 
     elif(len(argv) == 5):
         result[username]['full_name'] = argv[3]
         result[username]['email'] = argv[4]
-        print("full name:\t", argv[3])
-        print("email:\t", argv[4])
+        print("full name:\t\t\t", argv[3])
+        print("email:\t\t\t\t", argv[4])
 
     result[username]['disabled'] = False
-    print('account disabled:\t', result[username]['disabled'])
+    print('account disabled:\t\t', result[username]['disabled'])
 
     with open('fastapi.yaml', 'w', encoding='utf-8') as file:
         yaml.dump(data=result, stream=file, allow_unicode=True)
