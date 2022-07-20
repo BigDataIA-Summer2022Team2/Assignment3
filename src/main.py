@@ -102,8 +102,14 @@ else:
     with open('fastapi.yaml', 'w', encoding='utf-8') as file:
         yaml.dump(data=result, stream=file, allow_unicode=True)
         print("Successfully create `fastapi.yaml` file!")
+    
+    
+    os.system("ls -l")
+        
+        
     abs_path = os.path.dirname((os.path.abspath(__file__)))
     yaml_path = abs_path + "/fastapi.yaml"
+    
     with open(yaml_path, 'r') as file:
         config = yaml.safe_load(file)
         if username in config.keys():
