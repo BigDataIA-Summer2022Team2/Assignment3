@@ -6,6 +6,7 @@ from fastapi.security import OAuth2PasswordBearer
 from numpy import equal
 from pydantic import BaseModel
 from pathlib import Path
+import uvicorn
 import sys
 import logging.config
 from requests import request
@@ -21,6 +22,8 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from pydantic import BaseModel
 import uvicorn
+import streamlit_authenticator as stauth
+from sys import argv
 ################################################################
 
 
@@ -40,11 +43,8 @@ app = FastAPI()
 
 global username
 username = ""
-# global accesstoken
-# accesstoken =""
 
 ############################# Auth - JWT #################################
-# > openssl rand -hex 32
 
 if os.path.exists("key.txt"):
     os.remove("key.txt")
@@ -59,27 +59,73 @@ else:
     key = f.read()
     f.close()
 
+########################################################
+result={}
+if len(argv) == 1:
+    os.system("echo 'You need input your username, full_name, email, password!!!'")
+else:
+    print("Your argvs are:\t", argv)
+    print("Length of argv is:\t", len(argv),"\n\n\n")
+    username = argv[1]
+    result[username] = {}
+    result[username]['username'] = argv[1]
+    list_passwd = []
+    list_passwd.append(argv[2])
+    list_hashed_res = stauth.Hasher(list_passwd).generate()
+    result[username]['hashed_password'] = list_hashed_res[0]
+    
+    print("username:\t\t\t", argv[1])
+    print("plain password:\t\t\t", argv[2])
+    print("hashed password:\t\t", list_hashed_res[0])
+
+    if len(argv) == 3:
+        result[username]['full_name'] = argv[1]
+        result[username]['email'] = ""
+        print("full name:\t\t\t", argv[1])
+        print("email:\t\t\t\t", "")
+
+    elif(len(argv) == 4):
+        result[username]['full_name'] = argv[3]
+        result[username]['email'] = ""
+        print("full name:\t\t\t", argv[3])
+        print("email:\t\t\t\t", "")
+
+    elif(len(argv) == 5):
+        result[username]['full_name'] = argv[3]
+        result[username]['email'] = argv[4]
+        print("full name:\t\t\t", argv[3])
+        print("email:\t\t\t\t", argv[4])
+
+    result[username]['disabled'] = False
+    print('account disabled:\t\t', result[username]['disabled'])
+
+    with open('fastapi.yaml', 'w', encoding='utf-8') as file:
+        yaml.dump(data=result, stream=file, allow_unicode=True)
+        print("Successfully create `fastapi.yaml` file!")
+         
+    abs_path = os.path.dirname((os.path.abspath(__file__)))
+    yaml_path = abs_path + "/fastapi.yaml"
+    
+    with open(yaml_path, 'r') as file:
+        config = yaml.safe_load(file)
+        if username in config.keys():
+            user_dict = config[username]
+            print(user_dict)
+#########################################################
+
+
+
+
+
+
+
+
+
+
+
 SECRET_KEY = key
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30 # 30 mins expire
-
-# connect to DB
-
-
-abs_path = os.path.dirname((os.path.abspath(__file__)))
-yaml_path = abs_path + "/mysql.yaml"
-
-
-with open(yaml_path, 'r') as file:
-    config = yaml.safe_load(file)
-#print(config)
-db_host = config['credentials']['host']
-db_user = config['credentials']['user']
-db_password = config['credentials']['password']
-db_database = config['credentials']['database']
-
-con = pymysql.connect(host=db_host, user=db_user, password=db_password, database=db_database, charset="utf8")
-c = con.cursor()
 
 class Token(BaseModel):
     access_token: str
@@ -108,26 +154,14 @@ def get_password_hash(password):
     return pwd_context.hash(password)
 
 
-
 def get_user(username: str):
-    # db connection
+    abs_path = os.path.dirname((os.path.abspath(__file__)))
+    yaml_path = abs_path + "/fastapi.yaml"
+    with open(yaml_path, 'r') as file:
+        config = yaml.safe_load(file)
 
-    sql_status = c.execute('SELECT username,full_name,email,hashed_password,disabled from user_table WHERE username =%s',(username))
-    if sql_status == 1:
-        sql_result = c.fetchall()[0] # Tuple ("cheng","cheng wang", "xxx@email.com","$2b$12$mXOwgkMw7fMDvVe5WMf8M.S16i.97eVmpQRbePhaZ0ISub8BO1yD.", 0)
-        result = {}
-        result[username] = {}
-        result[username]['username'] = sql_result[0]
-        result[username]['full_name'] = sql_result[1]
-        result[username]['email'] = sql_result[2]
-        result[username]['hashed_password'] = sql_result[3]
-        if sql_result[4] == 0:
-            result[username]['disabled'] = False
-        else:
-            result[username]['disabled'] = True
-        user_dict = result[username]
-
-        return UserInDB(**user_dict)
+    # user_dict = config[username]
+    return UserInDB(**config[username])
 
 
 
@@ -207,23 +241,6 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 ############################# Auth - JWT #################################
 
 
-
-############################# Logging #################################
-
-# setup loggers
-#logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
-
-# get root logger
-#logger = logging.getLogger(__name__)  # the __name__ resolve to "main" since we are at the root of the project. 
-                                      # This will get the root logger since no logger in the configuration has this name.
-
-#app.router.route_class = LoggingRoute
-#app.include_router(dashboard.router)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-
-
 # Home page
 @app.get("/", response_class=HTMLResponse)
 async def home():
@@ -249,17 +266,6 @@ async def qualityinspection(file: bytes = File(), current_user: User = Depends(g
         
 
     return response
-
-# @app.post("/files/")
-# async def create_files(files: List[bytes] = File()):
-#     return {"file_sizes": [len(file) for file in files]}
-# display random image and its info
-# @app.get("/display/image/")
-# async def displayImageInHTML(imgName:str,current_user: User = Depends(get_current_active_user)):
-#     image = displayImage.displayImageInHTML(imgName)
-#     if image == {"error:":"No data Found!"}:
-#         raise HTTPException(status_code=404, detail="Item not found")
-#     return Response(content=image, media_type="image/jpeg")
 
 
 # @Description: input basemodel
