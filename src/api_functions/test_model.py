@@ -37,6 +37,6 @@ def qualityinspection(file):
     x = (prediction > 0.5).astype("int32")
     response = {}
     #response["image name"] = filename
-    response["status"] = model.summary#STATUS[x[0][0]]
+    response["status"] = STATUS[x[0][0]]
     response["probability"] = str(round(prediction[0][0] * 100,3)) + "%"
     return response
