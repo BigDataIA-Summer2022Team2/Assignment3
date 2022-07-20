@@ -35,9 +35,9 @@ model.compile(optimizer="adam",loss='binary_crossentropy',metrics=['accuracy'])
 
 model.summary()
 
-model.fit_generator(train,epochs=12,steps_per_epoch=30,validation_data=test,validation_steps=len(test))
+model.fit_generator(train,epochs=8,steps_per_epoch=10,validation_data=test,validation_steps=len(test))
 
-joblib.dump(model, 'model.pkl')
+model.save('model')
 # with open('model_pkl', 'wb') as files:
 #      pickle.dump(model, files)
 #model.save('trained_model.h5')

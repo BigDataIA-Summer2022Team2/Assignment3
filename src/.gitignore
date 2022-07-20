@@ -5,3 +5,5 @@ key.txt
 */__pycache__
 test
 train
+__pycache__
+model
