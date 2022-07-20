@@ -28,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: anku22/fastapi:latest # Update the dockerhub_id, image_name and tag
+          tags: lemonsoldout/team2-assignment3:latest
