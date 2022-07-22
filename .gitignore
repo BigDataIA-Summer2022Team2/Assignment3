@@ -2,3 +2,4 @@
 log/
 trained_model.h5
 fastapi.yaml
+s3.yaml
