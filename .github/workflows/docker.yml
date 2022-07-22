@@ -2,6 +2,8 @@ name: team-assignment3-cicd
 
 on:
   push:
+    branches:
+      - "main"
     tags:
       - 'v*'
 
