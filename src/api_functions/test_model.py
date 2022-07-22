@@ -14,7 +14,7 @@ import json
 def qualityinspection(file):
     STATUS = ["Defect", "Ok"]
 
-    #Todo Load Transfer Learning model from Amason S3
+    #Todo Load Transfer Learning model from Amason S3 
     """
     when user wants to create a Docker container
     We can use params from user input to create a model.yaml file to store keys 
