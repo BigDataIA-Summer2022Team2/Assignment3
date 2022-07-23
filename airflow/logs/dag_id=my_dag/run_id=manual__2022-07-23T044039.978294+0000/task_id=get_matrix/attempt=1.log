@@ -1,0 +1,36 @@
+[2022-07-23 00:40:43,933] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: my_dag.get_matrix manual__2022-07-23T04:40:39.978294+00:00 [queued]>
+[2022-07-23 00:40:43,936] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: my_dag.get_matrix manual__2022-07-23T04:40:39.978294+00:00 [queued]>
+[2022-07-23 00:40:43,936] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-23 00:40:43,936] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-07-23 00:40:43,936] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-23 00:40:43,948] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): get_matrix> on 2022-07-23 04:40:39.978294+00:00
+[2022-07-23 00:40:43,952] {standard_task_runner.py:52} INFO - Started process 344 to run task
+[2022-07-23 00:40:43,955] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:40:39.978294+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/mydag.py', '--cfg-path', '/tmp/tmpo3yk7pw4', '--error-file', '/tmp/tmpwhrttjcl']
+[2022-07-23 00:40:43,957] {standard_task_runner.py:80} INFO - Job 19: Subtask get_matrix
+[2022-07-23 00:40:43,996] {task_command.py:371} INFO - Running <TaskInstance: my_dag.get_matrix manual__2022-07-23T04:40:39.978294+00:00 [running]> on host DESKTOP-5GAFI6N.localdomain
+[2022-07-23 00:40:44,042] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=my_dag
+AIRFLOW_CTX_TASK_ID=get_matrix
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-23T04:40:39.978294+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-23T04:40:39.978294+00:00
+[2022-07-23 00:40:44,043] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/lemon/main/airflow/venv/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/lemon/main/airflow/venv/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/lemon/airflow/dags/mydag.py", line 21, in matrix
+    model = load_model(abs_path + "./trained_model.h5")
+  File "/home/lemon/main/airflow/venv/lib/python3.8/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/lemon/main/airflow/venv/lib/python3.8/site-packages/keras/saving/save.py", line 206, in load_model
+    raise IOError(f'No file or directory found at {filepath_str}')
+OSError: No file or directory found at /home/lemon/airflow./trained_model.h5
+[2022-07-23 00:40:44,046] {taskinstance.py:1415} INFO - Marking task as FAILED. dag_id=my_dag, task_id=get_matrix, execution_date=20220723T044039, start_date=20220723T044043, end_date=20220723T044044
+[2022-07-23 00:40:44,056] {standard_task_runner.py:92} ERROR - Failed to execute job 19 for task get_matrix (No file or directory found at /home/lemon/airflow./trained_model.h5; 344)
+[2022-07-23 00:40:44,087] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-07-23 00:40:44,098] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

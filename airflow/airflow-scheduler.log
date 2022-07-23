@@ -1,0 +1,109 @@
+2022-07-23 00:40:12,400 INFO - Starting the scheduler
+2022-07-23 00:40:12,400 INFO - Processing each file at most -1 times
+2022-07-23 00:40:12,402 INFO - Loaded executor: SequentialExecutor
+2022-07-23 00:40:12,405 INFO - Launched DagFileProcessorManager with pid: 32531
+2022-07-23 00:40:12,406 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 00:40:12,407 INFO - Configured default timezone Timezone('UTC')
+2022-07-23 00:40:40,335 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:40:39.978294+00:00 [scheduled]>
+2022-07-23 00:40:40,335 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:40:40,335 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:40:39.978294+00:00 [scheduled]>
+2022-07-23 00:40:40,337 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:40:39.978294+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:40:40,337 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:40:39.978294+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:40:40,343 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:40:39.978294+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:40:44,725 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:40:39.978294+00:00 exited with status success for try_number 1
+2022-07-23 00:40:44,731 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:40:39.978294+00:00, map_index=-1, run_start_date=2022-07-23 04:40:43.933412+00:00, run_end_date=2022-07-23 04:40:44.046513+00:00, run_duration=0.113101, state=failed, executor_state=success, try_number=1, max_tries=0, job_id=19, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:40:40.336094+00:00, queued_by_job_id=18, pid=344
+2022-07-23 00:40:44,888 ERROR - Marking run <DagRun my_dag @ 2022-07-23 04:40:39.978294+00:00: manual__2022-07-23T04:40:39.978294+00:00, externally triggered: True> failed
+2022-07-23 00:40:44,888 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:40:39.978294+00:00, run_id=manual__2022-07-23T04:40:39.978294+00:00, run_start_date=2022-07-23 04:40:40.303408+00:00, run_end_date=2022-07-23 04:40:44.888912+00:00, run_duration=4.585504, state=failed, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:40:44,892 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:44:12,273 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:44:11.304104+00:00 [scheduled]>
+2022-07-23 00:44:12,273 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:44:12,273 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:44:11.304104+00:00 [scheduled]>
+2022-07-23 00:44:12,274 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:44:11.304104+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:44:12,274 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:44:11.304104+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:44:12,282 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:44:11.304104+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:44:37,197 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:44:11.304104+00:00 exited with status success for try_number 1
+2022-07-23 00:44:37,211 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:44:11.304104+00:00, map_index=-1, run_start_date=2022-07-23 04:44:15.175148+00:00, run_end_date=2022-07-23 04:44:36.231148+00:00, run_duration=21.056, state=success, executor_state=success, try_number=1, max_tries=0, job_id=21, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:44:12.273717+00:00, queued_by_job_id=18, pid=1103
+2022-07-23 00:44:37,497 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:44:11.304104+00:00: manual__2022-07-23T04:44:11.304104+00:00, externally triggered: True> successful
+2022-07-23 00:44:37,498 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:44:11.304104+00:00, run_id=manual__2022-07-23T04:44:11.304104+00:00, run_start_date=2022-07-23 04:44:12.236468+00:00, run_end_date=2022-07-23 04:44:37.498369+00:00, run_duration=25.261901, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:44:37,502 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:45:12,560 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 00:47:35,242 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:47:34.849865+00:00 [scheduled]>
+2022-07-23 00:47:35,243 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:47:35,243 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:47:34.849865+00:00 [scheduled]>
+2022-07-23 00:47:35,244 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:47:34.849865+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:47:35,244 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:47:34.849865+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:47:35,251 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:47:34.849865+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:48:14,717 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:47:34.849865+00:00 exited with status success for try_number 1
+2022-07-23 00:48:14,721 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:47:34.849865+00:00, map_index=-1, run_start_date=2022-07-23 04:47:38.735472+00:00, run_end_date=2022-07-23 04:48:13.765304+00:00, run_duration=35.029832, state=success, executor_state=success, try_number=1, max_tries=0, job_id=22, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:47:35.243509+00:00, queued_by_job_id=18, pid=1622
+2022-07-23 00:48:17,985 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:47:34.849865+00:00: manual__2022-07-23T04:47:34.849865+00:00, externally triggered: True> successful
+2022-07-23 00:48:17,985 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:47:34.849865+00:00, run_id=manual__2022-07-23T04:47:34.849865+00:00, run_start_date=2022-07-23 04:47:35.217902+00:00, run_end_date=2022-07-23 04:48:17.985861+00:00, run_duration=42.767959, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:48:17,988 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:48:38,691 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:48:37.959501+00:00 [scheduled]>
+2022-07-23 00:48:38,692 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:48:38,692 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:48:37.959501+00:00 [scheduled]>
+2022-07-23 00:48:38,696 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:48:37.959501+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:48:38,697 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:48:37.959501+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:48:38,705 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:48:37.959501+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:49:15,997 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:48:37.959501+00:00 exited with status success for try_number 1
+2022-07-23 00:49:16,001 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:48:37.959501+00:00, map_index=-1, run_start_date=2022-07-23 04:48:42.117440+00:00, run_end_date=2022-07-23 04:49:15.253816+00:00, run_duration=33.136376, state=success, executor_state=success, try_number=1, max_tries=0, job_id=23, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:48:38.693670+00:00, queued_by_job_id=18, pid=1878
+2022-07-23 00:49:16,166 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:48:37.959501+00:00: manual__2022-07-23T04:48:37.959501+00:00, externally triggered: True> successful
+2022-07-23 00:49:16,167 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:48:37.959501+00:00, run_id=manual__2022-07-23T04:48:37.959501+00:00, run_start_date=2022-07-23 04:48:38.665108+00:00, run_end_date=2022-07-23 04:49:16.167137+00:00, run_duration=37.502029, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:49:16,170 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:49:58,838 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:49:57.016446+00:00 [scheduled]>
+2022-07-23 00:49:58,838 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:49:58,838 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:49:57.016446+00:00 [scheduled]>
+2022-07-23 00:49:58,839 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:49:57.016446+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:49:58,840 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:49:57.016446+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:49:58,846 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:49:57.016446+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:50:36,823 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:49:57.016446+00:00 exited with status success for try_number 1
+2022-07-23 00:50:36,828 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:49:57.016446+00:00, map_index=-1, run_start_date=2022-07-23 04:50:02.017320+00:00, run_end_date=2022-07-23 04:50:35.963149+00:00, run_duration=33.945829, state=success, executor_state=success, try_number=1, max_tries=0, job_id=24, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:49:58.838860+00:00, queued_by_job_id=18, pid=2166
+2022-07-23 00:50:36,862 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 00:50:36,865 INFO - Marked 1 SchedulerJob instances as failed
+2022-07-23 00:50:37,007 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:49:57.016446+00:00: manual__2022-07-23T04:49:57.016446+00:00, externally triggered: True> successful
+2022-07-23 00:50:37,007 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:49:57.016446+00:00, run_id=manual__2022-07-23T04:49:57.016446+00:00, run_start_date=2022-07-23 04:49:58.813744+00:00, run_end_date=2022-07-23 04:50:37.007261+00:00, run_duration=38.193517, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:50:37,009 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:50:55,284 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:50:54.469324+00:00 [scheduled]>
+2022-07-23 00:50:55,285 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:50:55,285 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:50:54.469324+00:00 [scheduled]>
+2022-07-23 00:50:55,286 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:50:54.469324+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:50:55,286 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:50:54.469324+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:50:55,291 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:50:54.469324+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:51:32,793 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:50:54.469324+00:00 exited with status success for try_number 1
+2022-07-23 00:51:32,798 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:50:54.469324+00:00, map_index=-1, run_start_date=2022-07-23 04:50:58.726682+00:00, run_end_date=2022-07-23 04:51:31.751695+00:00, run_duration=33.025013, state=success, executor_state=success, try_number=1, max_tries=0, job_id=25, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:50:55.285452+00:00, queued_by_job_id=18, pid=2438
+2022-07-23 00:51:32,955 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:50:54.469324+00:00: manual__2022-07-23T04:50:54.469324+00:00, externally triggered: True> successful
+2022-07-23 00:51:32,956 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:50:54.469324+00:00, run_id=manual__2022-07-23T04:50:54.469324+00:00, run_start_date=2022-07-23 04:50:55.245327+00:00, run_end_date=2022-07-23 04:51:32.956029+00:00, run_duration=37.710702, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:51:32,961 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:53:43,550 INFO - 1 tasks up for execution:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:53:42.713176+00:00 [scheduled]>
+2022-07-23 00:53:43,550 INFO - DAG my_dag has 0/16 running and queued tasks
+2022-07-23 00:53:43,550 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_dag.get_matrix manual__2022-07-23T04:53:42.713176+00:00 [scheduled]>
+2022-07-23 00:53:43,551 INFO - Sending TaskInstanceKey(dag_id='my_dag', task_id='get_matrix', run_id='manual__2022-07-23T04:53:42.713176+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2022-07-23 00:53:43,552 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:53:42.713176+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:53:43,558 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_dag', 'get_matrix', 'manual__2022-07-23T04:53:42.713176+00:00', '--local', '--subdir', 'DAGS_FOLDER/mydag.py']
+2022-07-23 00:54:21,161 INFO - Executor reports execution of my_dag.get_matrix run_id=manual__2022-07-23T04:53:42.713176+00:00 exited with status success for try_number 1
+2022-07-23 00:54:21,168 INFO - TaskInstance Finished: dag_id=my_dag, task_id=get_matrix, run_id=manual__2022-07-23T04:53:42.713176+00:00, map_index=-1, run_start_date=2022-07-23 04:53:46.910021+00:00, run_end_date=2022-07-23 04:54:20.300863+00:00, run_duration=33.390842, state=success, executor_state=success, try_number=1, max_tries=0, job_id=26, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2022-07-23 04:53:43.551229+00:00, queued_by_job_id=18, pid=2856
+2022-07-23 00:54:21,324 INFO - Marking run <DagRun my_dag @ 2022-07-23 04:53:42.713176+00:00: manual__2022-07-23T04:53:42.713176+00:00, externally triggered: True> successful
+2022-07-23 00:54:21,325 INFO - DagRun Finished: dag_id=my_dag, execution_date=2022-07-23 04:53:42.713176+00:00, run_id=manual__2022-07-23T04:53:42.713176+00:00, run_start_date=2022-07-23 04:53:43.522773+00:00, run_end_date=2022-07-23 04:54:21.325132+00:00, run_duration=37.802359, state=success, external_trigger=True, run_type=manual, data_interval_start=2022-07-22 00:00:00+00:00, data_interval_end=2022-07-23 00:00:00+00:00, dag_hash=f393868492936fb7b71c95bada76fcc0
+2022-07-23 00:54:21,327 INFO - Setting next_dagrun for my_dag to 2022-07-23T00:00:00+00:00, run_after=2022-07-24T00:00:00+00:00
+2022-07-23 00:55:36,995 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:00:37,121 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:05:37,247 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:10:37,375 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:15:37,501 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:20:37,628 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:25:37,756 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:30:37,882 INFO - Resetting orphaned tasks for active dag runs
+2022-07-23 01:35:39,712 INFO - Resetting orphaned tasks for active dag runs
